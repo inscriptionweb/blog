@@ -13,7 +13,6 @@ layout: default
         {% if page.update %}
         <p class="update"><label>Mise à jour :</label> {{ page.update | date: "%d %B %Y" }}</p>
         {% endif %}
-        {{ page.tags }}
         {% if page.tags %}
         <ul class="tags">
         {% for tag in page.tags %}
