@@ -1,0 +1,75 @@
+---
+layout: post
+title:  "Test"
+date:   2015-05-11
+tags: 
+- js 
+- html5 
+- sublime-text
+---
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam minima quia delectus libero sit aliquid soluta nisi quod id, voluptatem pariatur ratione beatae dignissimos, molestias ad vero reprehenderit esse consequuntur.
+
+## Titre principal 1
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. [Aliquam minima]() quia delectus libero sit aliquid soluta nisi quod id, voluptatem pariatur ratione beatae dignissimos, molestias ad vero reprehenderit esse consequuntur.
+
+    window.history.__proto__;
+    /**
+    * History
+    *    back: function back() { [native code] }
+    *    constructor: function History() { [native code] }
+    *    forward: function forward() { [native code] }
+    *    go: function go() { [native code] }
+    *    pushState: function () { [native code] }
+    *    replaceState: function () { [native code] }
+    *    __proto__: Object
+    */
+
+## Titre principal 2
+
+### Sous-titre 2.1
+
+#### Sous-sous-titre 2.1.1
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veritatis, quisquam dicta fugit! Pariatur ut, laudantium error necessitatibus nulla inventore sunt, ea obcaecati impedit aliquid quia debitis, rem tempore voluptatem.  
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus natus accusantium, vel, minus assumenda, illo voluptatibus repellat culpa similique optio itaque quaerat. Quos, itaque. Similique quibusdam amet voluptatem fuga, possimus.
+
+* `window.history.back()` : charge l’entrée précédente de l’historique
+* `window.history.forward()` : charge l’entrée suivante de l’historique
+* `window.history.go(n)` : charge l’entrée n de l’historique, relative à la page courante (nombre négatif pour les entrées précédentes, nombre positif pour les entrées suivantes)
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis voluptatibus aliquid mollitia, voluptate enim, doloremque ullam rerum, suscipit, libero soluta hic?
+
+> Lorem ipsum dolor sit amet.  
+> *Albert Einstein*
+
+Dolorem eum dolores quidem optio praesentium tempora ex dolorum.
+
+### Sous-titre 2.2
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus iste, maxime in. Quo quisquam sit itaque magni voluptates reiciendis dignissimos, illo architecto accusamus facilis deserunt doloremque, quaerat, est eveniet id.
+
+## Titre principal 3
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas sit accusamus maxime aliquid eligendi possimus aspernatur dicta. Quis, maiores in, dolor et est laboriosam, tempore doloribus quia, similique dolorem itaque.
+
+![Techs](http://lorempixel.com/600/350/technics/)
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas sit accusamus maxime aliquid eligendi possimus aspernatur dicta.
+
+    window.history.pushState({}, '', 'nouvelle-url.html');
+
+#### Lorem ipsum
+
+* un état : c’est un objet JS associé à votre entrée d’historique (exemple : `{action:'add'}`). Cet objet est accessible via la propriété `window.history.state`
+* un titre : totalement ignoré pour le moment, inutile de le renseigner
+* une url : la nouvelle url que votre navigateur va afficher (je rappelle que ce n’est pas une redirection, la page ne sera donc pas rafraîchie)
+
+Attention si vous utilisez l’objet `window.history.state`. Sa représentation est limité à 640 ko, il faut donc prendre garde à ce que vous y stockez. Si vous dépassez cette limite, il sera alors impossible d’accéder à l’objet.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. At enim voluptatum maxime commodi assumenda soluta dolore numquam quos quibusdam dolores ipsam asperiores corrupti nemo saepe placeat, eum, similique laborum, magni.
+
+## Liens
+
+* [Lien en rapport avec l'article]()
+* [Lien en rapport avec l'article]()

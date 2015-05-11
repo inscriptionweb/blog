@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<header>
+    <h1 id="title">{{ page.title }}</h1>
+    <a href="/" class="home"><span>Accueil</span></a>
+    <canvas id="bg"></canvas>
+</header>
+
+<article>
+    <aside>
+        <p class="date">{{ page.date | localize: "%d %B %Y" }}</p>
+        {% if page.update %}
+        <p class="update"><label>Mise à jour :</label> {{ page.update | date: "%d %B %Y" }}</p>
+        {% endif %}
+        {{ page.tags }}
+        {% if page.tags %}
+        <ul class="tags">
+        {% for tag in page.tags %}
+            <li><a href="/{{ tag }}">{{ tag }}</a></li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    </aside>
+
+    {{ content }}
+
+</article>
