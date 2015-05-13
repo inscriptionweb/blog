@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+body > footer {
+    width: 100%;
+    max-width: $content_width + (2 * $content_padding);
+    margin: 0 auto;
+    padding: 0 $content_padding;
+}

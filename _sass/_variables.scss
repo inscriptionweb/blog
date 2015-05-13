@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+$colors: (
+  "js": #feda3e,
+  "css": #cc6698,
+  "html": #0869ad,
+  "sql": #7A86b8,
+  "php": #f05133,
+  "sass": #ef0e39,
+
+  "drupal": #ff8300,
+  "wordpress": #2aa9e0,
+  "prestashop": #71bf45,
+
+  "apache": #9e79d7,
+  "bash": #9e79d7,
+  "bootstrap": #9e79d7,
+  "chrome": #9e79d7,
+  "flash": #9e79d7,
+  "git": #9e79d7,
+  "mathematiques": #9e79d7,
+  "news": #9e79d7,
+  "opera": #9e79d7,
+  "regex": #9e79d7,
+  "software": #9e79d7,
+  "sublime-text": #9e79d7,
+  "svg": #9e79d7,
+  );
+$defaultcolor: #7A86b8;
+
+$white:        #fff;
+$grey:         #bbb;
+$grey_light:   #eee;
+$grey_dark:    #333;
+
+$header_height:   250px;
+$content_width:   800px;
+$content_padding: 50px;
+$section_padding: 40px;
+$tag_height:      40px;
+$tag_width:       100px;
+$font_size:       22px;

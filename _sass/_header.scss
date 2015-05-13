@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+header {
+  color: $white;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid $grey;
+
+  h1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 60px;
+    width: $content_width;
+    padding: ($content_padding * 2) $content_padding;
+    margin: 0 auto;
+    min-height: $header_height;
+    z-index: 2;
+    transition: all .2s;
+  }
+  .home {
+    position: fixed;
+    top: $content_padding / 2;
+    left: $content_padding / 2;
+    color: $white;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: $font_size;
+    z-index: 2;
+
+    &:before {
+      content: '◄';
+      opacity: 0.5;
+      transition: all .4s;
+    }
+    span {
+      transition: all .4s;
+      padding-left: 30px;
+      opacity: 0;
+    }
+    &:hover,
+    &:focus {
+      span {
+        padding-left: 10px;
+        opacity: 1;
+      }
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 90;
+
+    h1 {
+      font-size: $font_size;
+      min-height: $font_size;
+      padding: ($content_padding / 2) 0;
+    }
+    + article {
+      margin-top: ($content_padding + $font_size) * 2;
+    }
+  }
+}
