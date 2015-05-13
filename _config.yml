@@ -9,6 +9,7 @@ baseurl: ""
 url: "http://blog2.smarchal.com"
 twitter_username: zessx
 github_username:  zessx
+permalink: /:title
 
 # Build settings
 markdown: kramdown
