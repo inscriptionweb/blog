@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Transition CSS et largeur dynamique</title>
+		<meta name="author" content="zessx">
+		
+		<style type='text/css'>
+			div {    
+				position: absolute;
+				left: 0;
+				padding-left: 50px;
+				height: 50px;
+				line-height: 50px;
+				box-sizing: border-box;
+				overflow: hidden;
+				font-family: Arial;
+			}
+			div > span {
+				padding-right: 50px;
+			}
+			div:nth-child(1) { top: 10px; }
+			div:nth-child(2) { top: 70px; }
+			div:nth-child(3) { top: 130px; }
+			div:nth-child(4) { top: 190px; }
+
+			.auto-width {
+				width: 0px;
+				background: #e74c3c;
+				transition: width .4s;
+			}
+			.auto-width:hover {
+				width: auto;
+			}
+
+			.fixed-width {
+				width: 0px;
+				background: #e67e22;
+				transition: width .4s;
+			}
+			.fixed-width:hover {
+				width: 200px;
+			}
+
+			.full-width {
+				width: 0px;
+				background: #e67e22;
+				transition: width 1s;
+			}
+			.full-width:hover {
+				width: 100%;
+			}
+
+			.full-max-width {
+				max-width: 0px;
+				background: #2ecc71;
+				transition: max-width 1s;
+			}
+			.full-max-width:hover {
+				max-width: 100%;
+			}
+		</style>
+
+		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="../../ga.js"></script>
+	</head>
+	<body>
+		<div class="auto-width"><span>width : auto</span></div>
+		<div class="fixed-width"><span>width : 200px</span></div>
+		<div class="full-width"><span>width : 100%</span></div>
+		<div class="full-max-width"><span>max-width : 100%</span></div>
+	</body>
+</html>

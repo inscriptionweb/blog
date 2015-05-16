@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Ajouter des séparateurs de navigation en CSS</title>
+		<meta name="author" content="zessx">
+		
+		<style type='text/css'>
+			nav ul {
+				display: table;
+				list-style: none;
+				overflow: hidden;
+				background: #e7e7e7;
+				border: 2px solid #2980b9;
+				border-radius: 5px;
+				padding: 0;
+			}
+			nav li {
+				display: table-cell;
+				width: 1%;
+			}
+			nav li + li::before {
+				content: "|";
+				float: left;
+				width: 2px;
+				line-height: 36px;
+				color: #2980b9;
+				background: #2980b9;
+			}
+			nav li a {
+				display: block;
+				color: #2980b9;
+				text-decoration: none;
+				text-align: center;
+				line-height: 36px;
+				padding: 0 10px;
+			}
+			nav li a:hover {
+				color: #ecf0f1;
+				background: #2980b9;
+			}
+		</style>
+
+		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="../../ga.js"></script>
+	</head>
+	<body>
+		<nav role="navigation">
+			<ul>
+				<li><a href="#">Foo</a></li>
+				<li><a href="#">Bar</a></li>
+				<li><a href="#">Baz</a></li>
+				<li><a href="#">Qux</a></li>
+				<li><a href="#">Quux</a></li>
+				<li><a href="#">Corge</a></li>
+				<li><a href="#">Grault</a></li>
+				<li><a href="#">Garply</a></li>
+				<li><a href="#">Waldo</a></li>
+				<li><a href="#">Fred</a></li>
+			</ul>
+		</nav>
+	</body>
+</html>

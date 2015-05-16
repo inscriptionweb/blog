@@ -1,0 +1,64 @@
+# Blink, le nouveau moteur de rendu
+- zessx
+- zessx
+- 2013/07/22
+- Chrome ; CSS ; Opera ; News
+- published
+
+Il y a quelques jours, la version 28 de Chrome a été officiellement déployée sur Windows et Mac (seuls les utilisateurs de Linux y avait accès auparavant). 
+Cette nouvelle version apporte comme toujours quelques optimisations et nouveautés (comme les Rich Notifications) mais le point important qui nous concerne, c'est l'introduction de **Blink**, le nouveau moteur de rendu de Chrome.
+
+## You forked my wife ?
+
+Pour la petite histoire, Chrome utilisait jusqu'à présent WebKit, et bien que Google soit le plus gros contributeur au projet WebKit, celui-ci est maintenu depuis toujours (2002) par les équipes d'Apple. Un problème quand on connait les relations entre ces deux géants, et les différences notables qu'il peut exister entre leurs produits respectifs Chrome et Safari.   
+Afin d'avoir une plus grande liberté de choix et d'action sur le moteur de rendu, Google a donc décidé de faire un fork de WebKit (qui était lui même un fork de KHTML an passage) : Blink.
+
+## Vers un unique moteur de rendu ?
+
+Il y a quelques semaine déjà, Opéra (dans sa version 15) avait décidé d'abandonner son moteur de rendu Presto pour Blink. Cette nouvelle avait été accueillie de façon mitigée.   
+D'une part, on pouvait de réjouir d'avoir un vendor-prefix en moins à gérer lors de l'utilisation de propriétés "expérimentales" en CSS3 :
+
+	background: #87e0fd; /* Old browsers */
+	background: -moz-linear-gradient(left,  #87e0fd 0%, #53cbf1 100%, #05abe0 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#87e0fd), color-stop(100%,#53cbf1), color-stop(100%,#05abe0)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #87e0fd 0%,#53cbf1 100%,#05abe0 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #87e0fd 0%,#53cbf1 100%,#05abe0 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #87e0fd 0%,#53cbf1 100%,#05abe0 100%); /* IE10+ */
+	background: linear-gradient(to right,  #87e0fd 0%,#53cbf1 100%,#05abe0 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=1 ); /* IE6-9 */
+
+D'autre part, certains s'inquiétaient de la présence de plus en plus importante de WebKit parmi les navigateurs. En effet, c'est en partie l'existence de plusieurs moteurs de rendu qui garantie leur évolution et leur qualité. L'absence de concurrence est toujours néfaste pour l'utilisateur.   
+Mais WebKit n'est pas Blink (du moins, n'est plus). 
+
+Hier, nous avions 3 moteurs de rendu principaux :
+
+* 52% : WebKit (Google Chrome + Safari)
+* 24% : Trident (Internet Explorer)
+* 20% : Gecko (Mozilla Firefox)
+* 4% : Autres, dont Presto (1%)
+
+Demain, nous aurons finalement 4 leaders :
+
+* 44% : Blink (Google Chrome + Opera)
+* 24% : Trident (Internet Explorer)
+* 20% : Servo (Mozilla Firefox)
+* 9% : WebKit (Safari)
+* 3% : Autres
+
+
+La concurrence n'est clairement pas mise en danger, au contraire ! Notez au passage que Mozilla a prévu de laisser son bébé (Gecko) de côté pour repartir "from scratch" avec un nouveau moteur de rendu : Servo.
+
+## Qu'est-ce que ça change pour nous ?
+
+S'il y a un point important à retenir, c'est **la suppression des vendor-prefixes** (`-webkit-`), les features expérimentales devront en contrepartie être activées dans le navigateur via la page ***about:flags*** (option "Activer les fonctionnalités expérimentales de WebKit").  
+Au final un peu moins de code en théorie, et un passage de "fonction expérimentale" à "fonction supportée" transparent.
+
+Actuellement, une moitié des utilisateurs de Chrome utilise encore la version 27, mais les semaines à venir devraient vite faire passer cette portion sous la barre des 1%. Nous pourrions donc assez rapidement oublier les vendor-prefixes `-webkit-` pour Chrome !!
+
+Mais quid de Safari ?
+
+## Liens :
+[StatCounter : Top  5 des navigateurs](http://gs.statcounter.com/#browser-ww-monthly-201307-201307-bar)   
+[StatCounter : Top 12 des navigateurs par version](http://gs.statcounter.com/#browser_version-ww-monthly-201307-201307-bar)   
+[La page du projet Blink sur chromium.org](http://www.chromium.org/blink)   
+[La page Github du projet Servo](https://github.com/mozilla/servo)   

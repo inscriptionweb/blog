@@ -1,0 +1,83 @@
+# Les alias Git
+- zessx
+- zessx
+- 2015/01/09
+- Git ; Development
+- published
+
+Comment ajouter des alias pour les commandes de Git ?
+
+## Une simple histoire de configuration
+
+Selon vos besoins, vous pouvez créer des alias de commandes globaux ou spécifiques à un dépôt. Dans le premier cas ils seront stockés dans le fichier `.gitconfig` de votre dossier utilisateur, et dans le second cas vous les trouverez dans le fichier `.git/config` de votre dépôt. 
+
+Un alias, ce n'est rien de plus qu'une simple ligne supplémentaire dans ce fichier de config, qui se trouvera dans la section `[alias]`. Vous avez deux manières de créer vos alias.
+
+## Créer un alias à la main
+
+Vous n'utiliserez presque jamais cette première option, je vous la présente uniquement pour mieux comprendre ce qu'est un alias. Placez-vous dans un dépôt, ou créez en un pour les tests et afficher le contenu du fichier `.git/config` :
+
+	$ mkdir test-alias
+	$ cd test-alias
+	$ git init
+	$ nano .git/config
+
+Voici le résultat que j'obtiens :
+
+	[core]
+        repositoryformatversion = 0
+        filemode = false
+        bare = false
+        logallrefupdates = true
+        symlinks = false
+        ignorecase = true
+        hideDotFiles = dotGitOnly
+
+On trouve ici différentes options de configuration définies, comme `ignorecase` ou `hideDotFiles`. On peut voir qu'elles sont toutes regroupées dans la section `[core]` grâce à l'indentation du fichier.
+
+Pour ajouter un alias, on va créer la section `[alias]` en fin de fichier, et le créer comme ceci :
+
+	[alias]
+		st = status
+
+Après avoir enregistré le fichier de config, ces deux commandes auront le même effet :
+
+	$ git status
+	$ git st
+
+## Utiliser `git config`
+
+La commande `git config` vous permet de modifier la configuration (globale ou non) de Git. Voici comment l'utiliser pour ajouter un alias dans un dépôt :
+
+	$ git config alias.st status
+
+Pour ajouter un alias global, utiliser comme d'habitude le paramètre `--global` :
+
+	$ git config --global alias.st status
+
+## Quelques alias utiles
+
+Pour simplifier vos actions quotidiennes :
+	
+	$ git config --global alias.st status
+	$ git config --global alias.co checkout
+	$ git config --global alias.ci commit
+
+Pour ne plus hésiter entre `git tag` et `git tags` :
+
+	$ git config --global alias.tags tag
+
+Afficher un historique clair des derniers commits :
+
+	$ git config --global alias.history 'log --pretty=format:"%h %ai | %s%d [%an]" --graph'
+
+À vous de trouver ceux qui vous seront le plus utile !
+
+## Supprimer un alias
+
+Si vous vous êtes trompé, ou qu'il s'avère qu'un de vos alias n'était pas si utile que ça, vous pouvez toujours le supprimer à la main, ou avec la commande suivante :
+
+    $ git config --unset alias.st
+
+## Liens :
+[Documentation sur les alias](http://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)   

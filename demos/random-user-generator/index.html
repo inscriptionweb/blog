@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Random User Generator</title>
+		<meta name="author" content="zessx">
+	  	
+		<style type='text/css'>
+			body {
+				font-family: 'Open Sans', sans-serif;
+			}
+			.preview {
+				background: #fff;
+				box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+			}
+			.preview .avatar {
+				width: 100px;
+				height: 100px;
+				margin: 20px;
+				float: left;
+				background: #e45e39;
+				border-radius: 100px;
+				overflow: hidden;
+			}
+			.preview .avatar img {
+				width: 100px;
+				height: 100px;
+			}
+			.preview .info {
+				float: left;
+				padding: 0 20px 20px 0;
+				width: 400px;
+				text-align: left;
+			}	
+			.preview .info h3 {
+				color: #e45e39;
+			}
+			.preview .info dl {
+				color: #666666;
+				font-size: 14px;
+			}
+			.preview .info dt {
+				float: left;
+				width: 80px;
+				font-weight: bold;
+			}
+			.preview .info h3 span {
+				border-bottom: 1px dotted #e45e39;
+			}
+			.preview .info .refresh {
+				position: relative;
+				top: 5px;
+				right: 10px;
+				float: right;
+				cursor: pointer;
+			}
+			.capitalize {
+				text-transform: capitalize;
+			}
+		</style>
+
+		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="../../ga.js"></script>
+	</head>
+	<body>
+		<div class="preview">
+			<div class="avatar">
+				<img src="" alt="">
+			</div>
+			<div class="info">
+				<h3>Hi, my name is <span class="gen_first_name capitalize"></span> <span class="gen_last_name capitalize"></span><img id="refresh" class="refresh" src="img/refresh.png" width="18px"></h3>
+				<dl>
+					<dt>Name:</dt>
+						<dd class="capitalize"><span class="gen_first_name"></span> <span class="gen_last_name"></span></dd>
+					<dt>Gender:</dt>
+						<dd class="capitalize"><span class="gen_gender"></span></dd>
+					<dt>Email:</dt>
+						<dd><span class="gen_email_address"></span></dd>
+					<dt>Location:</dt>
+						<dd class="capitalize"><span class="gen_location_street"></span>, <span class="gen_location_city"></span>, <span class="gen_location_state"></span></dd>
+				</dl>
+			</div>
+		</div>
+		
+		<script>
+		$(document).ready(function() {
+			function loadUser() {
+				$.ajax({
+					url: 'http://api.randomuser.me/0.2/',
+					dataType: 'json',
+					success: function(data){
+						var user = data.results[0].user;
+						$('.avatar img')
+							.attr('src', 'img/blank.gif')
+							.attr('src', user.picture)
+							.attr('alt', user.name.first+' '+user.name.last);
+						$('.gen_first_name').html(user.name.first);
+						$('.gen_last_name').html(user.name.last);
+						$('.gen_gender').html(user.gender);
+						$('.gen_email_address').html(user.email);
+						$('.gen_location_street').html(user.location.street);
+						$('.gen_location_city').html(user.location.city);
+						$('.gen_location_state').html(user.location.state);
+						$('.preview').show();
+					}
+				});
+			}
+			$('#refresh').on('click', loadUser);
+			loadUser();
+		})
+		</script>
+	</body>
+</html>

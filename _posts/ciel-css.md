@@ -1,0 +1,54 @@
+# Le ciel en CSS3
+- zessx
+- zessx
+- 2013/10/19
+- CSS ; Design
+- published
+
+Et si on prenait le temps de regarder en l'air ? Je vous propose une représentation des différentes couleurs possibles du ciel en CSS3.   
+Ce travail a déjà été en partie fait par d'autres, mais j'avais envie de le faire aussi de mon côté avec mes petites mimines.
+
+## Les dégradés CSS3
+
+Tous ces dégradés sont linéaires, et créés en CSS3 avec la fonction `linear-gradient` :
+
+	background: linear-gradient([<angle> | to <side-or-corner>,]? <color-stop>[, <color-stop>]+);
+
+Dans mon cas, j'ai systématiquement utilisé des dégradés dirigés de haut en bas, dont voici quelques exemples :
+
+	background: linear-gradient(to bottom, #2d91c2 0%, #1e528e 100%);
+	background: linear-gradient(to bottom, #154277 0%, #576e71 30%, #e1c45e 70%, #b26339 100%);
+
+Vous remarquerez que le nombre de points d'arrêt dans vos dégradés est infini (dans le decond exemple, nous avons 4 points d'arrêt à 0%, 30%, 70% et 100%).   
+Pour tout le reste, il n'est plus question que de votre imagination...
+
+## Un point rapide sur la compatibilité
+
+Il n'est pas utile d'utiliser la totalité des vendor prefixes comme on peut le voir dans certains articles. Aujourd'hui, la quasi-totalité des navigateurs récents supportent `linear-gradient` nativement. Il vous faudra toutefois faire l'impasse sur IE dans ses versions 9 et précédentes. 
+Attention malgré tout si vous utilisez ces vendor prefixes, car non content de vous faire dupliquer du code, on va vous demander de l'adapter ce coup ci ! En effet, l'implémentation de `linear-gradient` varie selon les navigateurs. **Utiliser la version non préfixée revient à utiliser une version standardisée, préconisée par le W3C** ; mais les versions préfixées ont chacune leur syntaxe. Un exemple ci-dessous, pour le même dégradé, vous pouvez voir que l'orientation du dégradé est dans certains cas précisée par une direction, et dans les autres par une origine :
+
+- Firefox 3.6+ :    
+`background: -moz-linear-gradient(top, #82addb 0%, #ebb2b1 100%);`
+- Chrome, Safari 4+ :    
+`background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#82addb), color-stop(100%,#ebb2b1));`
+- Chrome 10+, Safari 5.1+ :    
+`background: -webkit-linear-gradient(top, #82addb 0%,#ebb2b1 100%);`
+- Opera 11.10+ :    
+`background: -o-linear-gradient(top, #82addb 0%,#ebb2b1 100%);`
+- IE 10+ :    
+`background: -ms-linear-gradient(top, #82addb 0%,#ebb2b1 100%);`
+- W3C :    
+`background: linear-gradient(to bottom, #82addb 0%,#ebb2b1 100%);`
+
+## Le résultat
+
+(Cliquez sur un dégradé pour le voir en plaine largeur)
+
+<center><iframe src="demos/ciel-css/index.html" width="815" height="400"></iframe></center>
+
+## Liens :
+[**Démonstration**](http://blog.smarchal.com/demos/ciel-css/index.html)   
+[La démo sur CodePen](http://codepen.io/zessx/pen/rDEAl)   
+[La fonction linear-gradient sur le MDN](https://developer.mozilla.org/fr/docs/CSS/linear-gradient)   
+[Un excellent générateur de gradient CSS](http://www.colorzilla.com/gradient-editor/)   
+[Can I Use : CSS gradients ?](http://caniuse.com/css-gradients)   

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Une icône pour vos fichiers en CSS</title>
+		<meta name="author" content="zessx">
+
+		<style>
+			/* File Icon */
+			[data-fi] {
+			    display: inline-block;
+			    position: relative;
+			    width: 5em;
+			    height: 10em;
+			    margin-right: 2.4em;
+			    border-radius: .4em 0 0 .4em;
+			    border-color: #ccc;
+			    background: #333;
+			    color: #ccc;
+			}
+			[data-fi]:before {
+			    content: '';
+			    position: absolute;
+			    top: 0;
+			    right: -2.3em;
+			    border-width: 1.2em;
+			    border-style: solid;
+			    border-left-color: inherit;
+			    border-bottom-color: inherit;
+			    border-top-color: transparent;
+			    border-right-color: transparent;
+			}
+			[data-fi]:after {
+			    content: attr(data-fi);
+			    position: absolute;
+			    top: 1.3em;
+			    bottom: 0;
+			    left: 0;
+			    right: -1.3em;
+			    font: 1.8em/1.8em "Lucida Sans Unicode", "Lucida Grande", sans-serif normal;
+			    text-transform: uppercase;
+			    text-align: left;
+			    padding: 2.6em 0.3em 0;
+			    border-radius: .4em 0 .4em .4em;
+			    background: inherit;
+			}
+
+			/* Demo purpose */
+			body { background: #1c1c1c; font-size: 10px; }
+			i { margin: 20px; }
+			.container { width: 600px; margin: 28px auto; text-align: center; }
+		</style>
+		<script src="../../ga.js"></script>
+	</head>
+	<body>
+		<div class="container">
+
+		    <!-- Default -->
+		    <i data-fi=""></i>
+
+		    <!-- Default with text -->
+		    <i data-fi="txt"></i>
+
+		    <!-- Smaller -->
+		    <i data-fi="xml" style="font-size:50%"></i>
+
+		    <!-- Change background color -->
+		    <i data-fi="html" style="background:#e54d26"></i>
+		    <i data-fi="css" style="background:#0070ba"></i>
+
+		    <!-- Change background/font color -->
+		    <i data-fi="js" style="background:#d6ba32;color:#333;border-color:#333"></i>
+
+		</div>
+	</body>
+</html>

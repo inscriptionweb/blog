@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Compteurs CSS</title>
+		<meta name="author" content="zessx">
+
+		<style type='text/css'>
+			body {
+				counter-reset: figures;
+			}
+			article {
+				text-align: center;
+				width: 500px;
+			}
+			figure {
+				position: relative;
+				display: inline-block;
+			}
+			figure:before {
+				counter-increment: figures;
+				content: "Figure #" counter(figures);
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				text-align: center;
+				background: rgba(255, 255, 255, .5);
+				padding: 5px 0;
+			}
+		</style>
+
+		<script src="../../ga.js"></script>
+	</head>
+	<body>
+		<article>
+			<h1>Article title</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione eos aliquid cum quia, vitae sapiente porro at. Officiis doloremque tempore impedit iusto dignissimos harum inventore qui ex deleniti, quisquam, non.</p>
+			<figure><img src="http://lorempixel.com/200/300/nature/"></figure>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione eos aliquid cum quia, vitae sapiente porro at. Officiis doloremque tempore impedit iusto dignissimos harum inventore qui ex deleniti, quisquam, non.</p>
+			<figure><img src="http://lorempixel.com/300/200/nature/"></figure>
+			<figure><img src="http://lorempixel.com/400/200/nature/"></figure>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione eos aliquid cum quia, vitae sapiente porro at. Officiis doloremque tempore impedit iusto dignissimos harum inventore qui ex deleniti, quisquam, non.</p>
+			<figure><img src="http://lorempixel.com/300/300/nature/"></figure>
+		</article>
+	</body>
+</html>

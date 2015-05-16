@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Centrer verticalement un texte multi-ligne</title>
+		<meta name="author" content="zessx">
+	  
+		<style type='text/css'>
+			.va {
+				display: block;
+				width: 200px; height: 200px;
+				line-height: 200px;
+			}
+			.va>span {
+				display: inline-block;
+				vertical-align: middle;
+				line-height: 0;
+			}
+			.va>span>span {
+				line-height: 20px;
+			}
+
+			/* Style only */
+			.va {
+				float: left;
+				margin: 5px;
+				font-family: Arial, sans-serif;
+				text-align: center;
+				background: #e67e22;
+			}
+		</style>
+		<script src="../../ga.js"></script>
+	</head>
+	<body>
+		<p class="va">
+			<span>
+				<span>
+					Lorem ipsum dolor sit amet.
+				</span>
+			</span>
+		</p>
+		<p class="va">
+			<span>
+				<span>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad blanditiis!
+				</span>
+			</span>
+		</p>
+		<p class="va">
+			<span>
+				<span>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore aspernatur sit odio excepturi repudiandae quos.
+				</span>
+			</span>
+		</p>
+	</body>
+</html>
