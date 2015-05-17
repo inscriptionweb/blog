@@ -1,9 +1,12 @@
-# ZeroClipboard : Copier avec un simple clic
-- zessx
-- zessx
-- 2013/XX/XX
-- PHP ; Flash
-- draft
+---
+layout: post
+title:  "ZeroClipboard : Copier avec un simple clic"
+date:   9999-99-99
+tags:
+- js 
+description: >
+  
+--- 
 
 Pour des raisons de sécurité, les navigateurs ne sont pas autorisés à envoyer du contenu vers le presse-papier sans une action explicite de l'utilisateur, à savoir un <kbd>Ctrl+V</kbd> ou un clic droit / Copier. Voyons comment contourner cette limitation.
 

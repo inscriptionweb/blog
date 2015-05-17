@@ -1,11 +1,12 @@
-# Utiliser UTF8 par défaut avec MySQL
-- zessx
-- zessx
-- 2014/XX/XX
-- MySQL ; Development
-- draft
-
-Comment être sûr de dialoguer en UTF8 avec une base MySQL ?
+---
+layout: post
+title:  "Utiliser UTF8 par défaut avec MySQL"
+date:   9999-99-99
+tags:
+- sql 
+description: >
+    Comment être sûr de dialoguer en UTF8 avec une base MySQL ?
+--- 
 
 ## La base : la base
 

@@ -1,11 +1,12 @@
-# Créer son propre accordéon de contenu avec jQuery
-- zessx
-- zessx
-- 2099/01/01
-- jQuery ; JS ; Development
-- draft
-
-Atelier création ! Aujourd'hui je vous présente un moyen de créer un accordéon de contenu à la main.
+---
+layout: post
+title:  "Créer son propre accordéon de contenu avec jQuery"
+date:   9999-99-99
+tags:
+- js 
+description: >
+  Atelier création ! Aujourd'hui je vous présente un moyen de créer un accordéon de contenu à la main.
+--- 
 
 ## Réinventer la roue ?
 

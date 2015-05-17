@@ -1,11 +1,13 @@
-# Générer des mots de passe
-- zessx
-- zessx
-- 2014/10/xx
-- Development ; JS ; PHP
-- draft
-
-Comment générer simplement un mot de passe ?
+---
+layout: post
+title:  "Générer des mots de passe"
+date:   2013-04-08
+tags:
+- js
+- php 
+description: >
+  Comment générer simplement un mot de passe ?
+--- 
 
 ## Générer un mot de passe aléatoire
 
@@ -28,7 +30,7 @@ Cette fonction, si elle paraît évidente, est malgré tout très fiable car ell
 
 Si la génération de mots de passe aléatoire est très simple à mettre en place, ce n'est pas forcément le cas quand on veut partir d'une seed. 
 
-Quand je parle de seed (graine, semence...), je parle d'une chaîne de caractères d'origine qui générera toujours le même mot de passe. Ce type de génération n'est pas simple à mettre en place car il faut respecter quelques règles évidentes de sécurité :
+Quand je parle de seed (graine), je parle d'une chaîne de caractères d'origine qui générera toujours le même mot de passe. Ce type de génération n'est pas simple à mettre en place car il faut respecter quelques règles évidentes de sécurité :
 
 - ne pas pouvoir retrouver la seed à partir du mot de passe
 - ne pas avoir trop de doublons dans les mots de passe

@@ -1,9 +1,13 @@
-# Les cartes SVG interactives
-- zessx
-- zessx
-- 2013/XX/XX
-- SVG ; HTML
-- draft
+---
+layout: post
+title:  "Les cartes SVG interactives"
+date:   9999-99-99
+tags:
+- svg
+- html 
+description: >
+  
+---
 
 http://proov.fr/html/creer-une-carte-de-france-cliquable-en-html5-svg/#comment-246
 

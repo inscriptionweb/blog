@@ -1,11 +1,12 @@
-# Le tri de tableaux insensible à la casse en PHP
-- zessx
-- zessx
-- 2099/01/01
-- PHP ; Development
-- draft
-
-Comment trier des tableaux sans tenir compte de la casse ?
+---
+layout: post
+title:  "Le tri de tableaux insensible à la casse en PHP"
+date:   9999-99-99
+tags:
+- php
+description: >
+  Comment trier des tableaux sans tenir compte de la casse ?
+--- 
 
 ## Trier un `array` unidimensionnel
 

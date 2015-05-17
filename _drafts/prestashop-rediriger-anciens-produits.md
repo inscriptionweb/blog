@@ -1,11 +1,13 @@
-# Prestashop : rediriger les anciens produits
-- zessx
-- zessx
-- 2014/XX/XX
-- Prestashop ; PHP
-- draft
-
-Pour certaines boutiques, la liste des produits varie régulièrement : de nouveaux produits font leur apparition, et d'autres disparaissent. La suppression d'un produit pose problème en terme de référencement, en cela qu'elle génère une erreur 404. Voyons comment rediriger ces pages automatiquement.
+---
+layout: post
+title:  "Prestashop : rediriger les anciens produits"
+date:   9999-99-99
+tags:
+- prestashop
+- php 
+description: >
+    Pour certaines boutiques, la liste des produits varie régulièrement : de nouveaux produits font leur apparition, et d'autres disparaissent. La suppression d'un produit pose problème en terme de référencement, en cela qu'elle génère une erreur 404. Voyons comment rediriger ces pages automatiquement.
+---
 
 ## Rediriger un produit spécifique
 

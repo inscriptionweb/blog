@@ -1,9 +1,12 @@
-# Créer son slider en jQuery
-- zessx
-- zessx
-- 2013/XX/XX
-- Development ; jQuery ; JS
-- draft
+---
+layout: post
+title:  "Créer son slider en jQuery"
+date:   9999-99-99
+tags:
+- js 
+description: >
+  
+---
 
 	/* Slider top */
 	var stlen = $('#slider_top .strip a').size();

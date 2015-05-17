@@ -1,11 +1,12 @@
-# Réordonner les colonnes en PostgreSQL
-- zessx
-- zessx
-- 2015/xx/xx
-- PostgreSQL ; Database
-- draft
-
-Savez-vous comment modifier l'ordre des colonnes dans une table PostgreSQL ? Non ? Alors c'est par ici que ça ce passe !
+---
+layout: post
+title:  "Réordonner les colonnes en PostgreSQL"
+date:   9999-99-99
+tags:
+- sql 
+description: >
+    Savez-vous comment modifier l'ordre des colonnes dans une table PostgreSQL ? Non ? Alors c'est par ici que ça ce passe !
+--- 
 
 ## La solution toute simple...
 
