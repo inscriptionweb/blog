@@ -11,5 +11,12 @@ twitter_username: zessx
 github_username:  zessx
 permalink: /:title
 
+# Gems
+#gems:
+#  - octopress-autoprefixer
+#  - jekyll-i18n
+
 # Build settings
 markdown: kramdown
+sass:
+  style: compressed

@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+section.articles {
+	article {
+		h2 {
+			display: block;
+			text-align: center;
+			margin: ($section_padding / 2) 0;
+
+			a {
+				position: relative;
+				text-decoration: none;
+				bottom: 0;
+				transition: opacity .3s;
+
+				&:before {
+					content: none;
+				}
+				&:hover,
+				&:focus {
+					opacity: .7;
+				}
+			}
+			&:before {
+				content: none;
+			}
+		}
+		@each $tag, $color in $colors {
+			&[data-color="#{$tag}"] h2 a {
+				color: $color;
+			}
+		}
+
+		.article-preview {
+			display: block;
+			text-align: center;
+		}
+		.article-content {
+			display: none;
+		}
+	}
+}
+.loader {
+	&.end {
+		&:before {
+			content: "Bienvenue en bas de la page !";
+			display: block;
+			margin: 0 auto;
+			padding: ($content_padding * 2) 0;
+			text-align: center;
+			color: $grey;
+		}
+	}
+}

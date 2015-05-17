@@ -53,3 +53,94 @@ function headingAnchors() {
   });
 }
 document.addEventListener('DOMContentLoaded', headingAnchors, false);
+
+// Infinite load
+function infiniteLoad() {
+  
+  var allPosts,
+      isFetchingPosts = false,
+      shouldFetchPosts = true,
+      postsToLoad = document.querySelectorAll('.articles article').length,
+      loadNewPostsThreshold = 3000,
+      request = new XMLHttpRequest();
+  request.open('GET', '/posts.json', true);
+  request.onload = function() {
+    if (request.status >= 200 && request.status < 400) {
+      var data = JSON.parse(request.responseText);
+      allPosts = data["posts"];
+      if(loader = document.querySelector('.loader')) {
+        if(tag = loader.getAttribute('data-tag')) {
+          for (var i = 0; i < allPosts.length; i++) {
+            if(allPosts.indexOf(tag) < 0) {
+              allPosts.splice(i, 1);
+            }
+          };
+        }
+      }
+      if(allPosts.length <= postsToLoad) {
+        disableFetching();
+      }
+    } 
+  };
+  request.send();
+
+  if(document.querySelectorAll('.loader').length < 1) {
+    shouldFetchPosts = false;
+  }
+  function scroller() {
+    if(!shouldFetchPosts || isFetchingPosts) return;
+    if(document.body.scrollTop + window.innerHeight + 100 > document.body.offsetHeight) {
+      fetchPosts();
+    }
+  }
+  document.addEventListener('scroll', scroller, false);
+
+  function fetchPosts() {
+    if (!allPosts) return;
+    isFetchingPosts = true;
+    var loadedPosts = 0,
+        postCount = document.querySelectorAll('.articles article').length,
+        callback = function() {
+          loadedPosts++;
+          var postIndex = postCount + loadedPosts;
+          
+          if(postIndex > allPosts.length-1) {
+            disableFetching();
+            return;
+          }
+          
+          if(loadedPosts < postsToLoad) {
+            fetchPostWithIndex(postIndex, callback);
+          } else {
+            isFetchingPosts = false;
+          }
+        };    
+    fetchPostWithIndex(postCount + loadedPosts, callback);
+  }
+  
+  function fetchPostWithIndex(index, callback) {
+    var postURL = allPosts[index].url;
+    var request = new XMLHttpRequest();
+    request.open('GET', postURL, true);
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        var data = document.createElement('div');
+        data.innerHTML = request.responseText;
+        var posts = data.querySelectorAll('article');
+        Array.prototype.forEach.call(posts, function(post, index){
+          document.querySelector('.articles').appendChild(post);
+        });        
+        callback();
+      } 
+    };
+    request.send();
+  }
+  
+  function disableFetching() {
+    shouldFetchPosts = false;
+    isFetchingPosts = false;
+    document.querySelector('.loader').classList.add('end');
+  }
+  
+}
+document.addEventListener('DOMContentLoaded', infiniteLoad, false);

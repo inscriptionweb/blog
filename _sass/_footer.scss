@@ -10,7 +10,7 @@ body > footer {
         position: relative;
         justify-content: flex-end;
         line-height: 120px;
-        margin: $section_padding auto;
+        margin: 0 auto;
         color: $white;
         max-width: $content_width + (2 * $content_padding);
         padding: 0 $content_padding;
@@ -74,7 +74,7 @@ body > footer {
                 color: $grey_dark;
 
                 @each $tag, $color in $colors {
-                    body[data-color="#{$tag}"] & {
+                    [data-color="#{$tag}"] & {
                         background: $color;
 
                         &:before,
@@ -95,11 +95,15 @@ body > footer {
         padding: 0 $content_padding;
 
         h2 {
+            color: $grey_dark;
             margin-bottom: $section_padding;
 
             &:before {
                 content: none;
             }
+        }
+        #disqus_thread {
+            color: $grey_dark;
         }
     }
 }

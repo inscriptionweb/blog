@@ -1,12 +1,13 @@
-# Bordures avancées avec box-shadow
-- zessx
-- zessx
-- 2013/05/06
-- CSS ; Design
-- published
-
-Vu que je teste la propriété `box-shadow` en ce moment, je vais vous balancer une autre petite astuce qui m'est venue à l'idée dans la journée.   
-En calculant bien ses décalages, il est possible de simuler l'ajout de plusieurs bordures sur un même élément.
+---
+layout: post
+title:  "Bordures avancées avec box-shadow"
+date:   2013-05-06
+tags: 
+- css
+description: >
+  Vu que je teste la propriété `box-shadow` en ce moment, je vais vous balancer une autre petite astuce qui m'est venue à l'idée dans la journée.   
+  En calculant bien ses décalages, il est possible de simuler l'ajout de plusieurs bordures sur un même élément.
+---
 
 Gardez bien à l'esprit que votre ombre aura toujours la forme de votre élément (ça reste une ombre, merde.), mais que vous pouvez agir sur sa taille. Voici, ce coup-ci, la syntaxe complète de `box-shadow` :
 
@@ -31,7 +32,8 @@ En jouant sur cette taille, et en faisant bien attention à l'ordre dans lequel 
 			0 0 0 6px #333;
 	}
 
-<center>![Double bordure simple](posts/images/bordures-avancees-box-shadow/double-border.png)</center>
+{:.center}
+![Double bordure simple]({{ site.url }}/images/bordures-avancees-box-shadow/double-border.png)
 
 ## Une double bordure arrondie
 ...qui donne un effet sympa quand on décale les deux ombres.
@@ -43,7 +45,8 @@ En jouant sur cette taille, et en faisant bien attention à l'ordre dans lequel 
 			 3px  3px 0 3px #333;
 	}
 
-<center>![Double bordure arrondie](posts/images/bordures-avancees-box-shadow/rounded-double-border.png)</center>
+{:.center}
+![Double bordure arrondie]({{ site.url }}/images/bordures-avancees-box-shadow/rounded-double-border.png)
 
 ## Deux coins mis en avant
 
@@ -54,7 +57,8 @@ En jouant sur cette taille, et en faisant bien attention à l'ordre dans lequel 
 			0 0 0 6px #999;
 	}
 
-<center>![Deux coins mis en avant](posts/images/bordures-avancees-box-shadow/double-coins-border.png)</center>
+{:.center}
+![Deux coins mis en avant]({{ site.url }}/images/bordures-avancees-box-shadow/double-coins-border.png)
 
 ## Un bordure dans un style "couture"
 
@@ -65,7 +69,8 @@ En jouant sur cette taille, et en faisant bien attention à l'ordre dans lequel 
 			inset 0 0 0 1px #333;
 	}
 
-<center>![Un bordure dans un style couture](posts/images/bordures-avancees-box-shadow/seam-border.png)</center>
+{:.center}
+![Un bordure dans un style couture]({{ site.url }}/images/bordures-avancees-box-shadow/seam-border.png)
 
 ## Une bordure arc-en-c... 
 DOUBLE RAINBOWS !! RAINBOWS EVERYWHERE !!11!
@@ -80,7 +85,8 @@ DOUBLE RAINBOWS !! RAINBOWS EVERYWHERE !!11!
 			0 0 0 6px #3311bb;
 	}
 
-<center>![DOUBLE RAINBOWS !! RAINBOWS EVERYWHERE !!11!](posts/images/bordures-avancees-box-shadow/rainbow-border.png)</center>
+{:.center}
+![DOUBLE RAINBOWS !! RAINBOWS EVERYWHERE !!11!]({{ site.url }}/images/bordures-avancees-box-shadow/rainbow-border.png)
 
 Vous pouvez en découvrir plein d'autres dans la démo, hébergée sur le blog ou CodePen (liens ci-dessous).
 

@@ -2,26 +2,32 @@
 layout: default
 ---
 <header>
-    <h1 id="title">{{ page.title }}</h1>
-    <a href="/" class="home"><span>Accueil</span></a>
-    <canvas id="bg"></canvas>
+	<h1 id="title">{{ page.title }}</h1>
+	<a href="/" class="home"><span>Accueil</span></a>
+	<canvas id="bg"></canvas>
 </header>
 
-<article>
-    <aside>
-        <p class="date">{{ page.date | localize: "%d %B %Y" }}</p>
-        {% if page.update %}
-        <p class="update"><label>Mise à jour :</label> {{ page.update | date: "%d %B %Y" }}</p>
-        {% endif %}
-        {% if page.tags %}
-        <ul class="tags">
-        {% for tag in page.tags %}
-            <li><a href="/{{ tag }}">{{ tag }}</a></li>
-        {% endfor %}
-        </ul>
-        {% endif %}
-    </aside>
+<article data-color="{{ page.tags | first }}">
+	<aside>
+		<p class="date">{{ page.date | localize: "%d %B %Y" }}</p>
+		{% if page.update %}
+		<p class="update"><label>Mise à jour :</label> {{ page.update | date: "%d %B %Y" }}</p>
+		{% endif %}
+		<div class="article-preview">
+			<h2><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></h2>
+			{{ page.description }}
+		</div>
+		{% if page.tags %}
+		<ul class="tags">
+		{% for tag in page.tags %}
+			<li><a href="/{{ tag }}">{{ tag }}</a></li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+	</aside>
 
-    {{ content }}
+	<div class="article-content">
+		{{ content }}
+	</div>
 
 </article>
