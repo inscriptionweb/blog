@@ -5,7 +5,7 @@ date:   2015-04-07
 tags: 
 - js
 description: >
-  Quelle fonction utiliser : **data()** ou **attr()** ?
+  Quelle fonction utiliser : <code>data()</code> ou <code>attr()</code> ?
 ---
 
 ## Comprendre la différence entre les deux fonctions

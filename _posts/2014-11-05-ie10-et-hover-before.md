@@ -5,7 +5,7 @@ date:   2014-11-05
 tags: 
 - css
 description: >
-  Comment utiliser le sélecteur CSS **:hover:before** avec IE10 ?
+  Comment utiliser le sélecteur CSS <code>:hover:before</code> avec IE10 ?
 ---
 
 ## Le problème

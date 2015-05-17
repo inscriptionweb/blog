@@ -5,7 +5,7 @@ date:   2013-09-16
 tags: 
 - php
 description: >
-  Une astuce rapide pour dépasser les limites posées par la fonction **imagecreatefromjpeg()**
+  Une astuce rapide pour dépasser les limites posées par la fonction <code>imagecreatefromjpeg()</code>
 ---
 
 Vous avez peut-être déjà eu à travailler sur des images en PHP, et à utiliser la fonction `imagecreatefromjpeg()`, ou ses cousines `imagecreatefrompng()` et `imagecreatefromgif()` :

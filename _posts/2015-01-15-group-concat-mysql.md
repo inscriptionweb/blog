@@ -5,7 +5,7 @@ date:   2015-01-15
 tags: 
 - sql
 description: >
-  Connaissez-vous la fonction **GROUP_CONCAT** en MySQL ?
+  Connaissez-vous la fonction <code>GROUP_CONCAT</code> en MySQL ?
 ---
 
 ## Présentation

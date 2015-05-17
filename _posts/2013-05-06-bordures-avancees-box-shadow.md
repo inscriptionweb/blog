@@ -5,7 +5,7 @@ date:   2013-05-06
 tags: 
 - css
 description: >
-  Vu que je teste la propriété **box-shadow** en ce moment, je vais vous balancer une autre petite astuce qui m'est venue à l'idée dans la journée.   
+  Vu que je teste la propriété <code>box-shadow</code> en ce moment, je vais vous balancer une autre petite astuce qui m'est venue à l'idée dans la journée.   
   En calculant bien ses décalages, il est possible de simuler l'ajout de plusieurs bordures sur un même élément.
 ---
 

@@ -5,7 +5,7 @@ date:   2015-03-04
 tags: 
 - bash
 description: >
-  Comment supprimer rapidement tous ces fichier **._** générés par Mac OS X ?
+  Comment supprimer rapidement tous ces fichier <code>._</code> générés par Mac OS X ?
 ---
 
 ## I will look for you, I will find you, and I will kill you.

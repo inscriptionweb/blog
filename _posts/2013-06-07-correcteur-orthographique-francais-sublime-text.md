@@ -6,7 +6,7 @@ update: 2014-06-17
 tags: 
 - sublime-text
 description: >
-  Le correcteur orthographique est une fonctionnalité qui peut être utile de temps à autres. Par défaut, seuls les dictionnaire ***English US*** et ***Enlish EN*** sont installés. Voici comment ajouter rapidement un dictionnaire français.
+  Le correcteur orthographique est une fonctionnalité qui peut être utile de temps à autres. Par défaut, seuls les dictionnaire <strong>English US</strong> et <strong>Enlish EN</strong> sont installés. Voici comment ajouter rapidement un dictionnaire français.
 ---
 
 ## 1/ Récupérez l'ensemble des dictionnaires

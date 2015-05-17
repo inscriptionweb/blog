@@ -5,7 +5,7 @@ date:   2014-12-01
 tags: 
 - css
 description: >
-  Connaissez-vous le mot-clé **currentColor** en CSS3 ?
+  Connaissez-vous le mot-clé <code>currentColor</code> en CSS3 ?
 ---
 
 ## Présentation

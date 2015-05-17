@@ -5,7 +5,7 @@ date:   2015-04-21
 tags: 
 - js
 description: >
-  Présentation de l'objet **window.history** et des différentes méthodes de manipulation de l'historique du navigateur en JavaScript.
+  Présentation de l'objet <code>window.history</code> et des différentes méthodes de manipulation de l'historique du navigateur en JavaScript.
 ---
 
 ## L'objet `window.history`

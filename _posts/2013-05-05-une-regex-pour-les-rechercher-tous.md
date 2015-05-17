@@ -6,8 +6,8 @@ tags:
 - regex
 - sublime-text
 description: >
-  Une Regex pour les rechercher tous.   
-  Une Regex pour les trouver.   
+  Une Regex pour les rechercher tous.<br>  
+  Une Regex pour les trouver.<br>
   Une Regex pour les remplacer tous et dans les ténèbres les lier.
 ---
 

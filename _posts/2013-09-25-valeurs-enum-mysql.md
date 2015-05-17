@@ -6,7 +6,7 @@ tags:
 - sql
 - php
 description: >
-  Vous utilisez peut-être le type de champ **ENUM** en MySQL, qui vous permet d'avoir une liste de valeurs prédéfinies. Voici comment récupérer la liste de ces valeurs prédéfinies dans un tableau en PHP :
+  Vous utilisez peut-être le type de champ <code>ENUM</code> en MySQL, qui vous permet d'avoir une liste de valeurs prédéfinies. Voici comment récupérer la liste de ces valeurs prédéfinies dans un tableau en PHP :
 ---
 
 	$row = $db

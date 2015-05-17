@@ -6,7 +6,7 @@ tags:
 - css 
 description: >
     Histoire de donner un petit style à votre avatar, je vais commencer avec pas un, 
-    mais **DEUX** <del>Willi Waller 2006</del> petits tricks CSS pour générer un 
+    mais <strong>DEUX</strong> <del>Willi Waller 2006</del> petits tricks CSS pour générer un 
     médaillon à partir d'une image normale (comprenez carrée) !
 --- 
 

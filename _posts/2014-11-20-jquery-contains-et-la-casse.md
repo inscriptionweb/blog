@@ -5,7 +5,7 @@ date:   2014-11-20
 tags: 
 - js
 description: >
-  Petite astuce pour pouvoir utiliser un sélecteur jQuery **:contains** insensible à la casse.
+  Petite astuce pour pouvoir utiliser un sélecteur jQuery <code>:contains</code> insensible à la casse.
 ---
 
 ## Le comportement standard de `:contains`

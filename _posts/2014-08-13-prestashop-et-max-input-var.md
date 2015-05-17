@@ -6,7 +6,7 @@ tags:
 - prestashop
 - php
 description: >
-  Comment augmenter la valeur de **max_input_vars** pour pouvoir utiliser la page de traduction des modules ?
+  Comment augmenter la valeur de <code>max_input_vars</code> pour pouvoir utiliser la page de traduction des modules ?
 ---
 
 ## Overdose

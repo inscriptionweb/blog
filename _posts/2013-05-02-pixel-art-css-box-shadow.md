@@ -5,7 +5,7 @@ date:   2013-05-02
 tags: 
 - css
 description: >
-  En testant la propriété CSS **box-shadow**, j'ai trouvé par hasard un moyen de créer de multiples carrés en multipliant les ombres. En fouinant un peu sur le net, j'ai pu voir que cette technique avait déjà été utilisée pour faire du pixel art, voici donc un petit feedback de ma part !
+  En testant la propriété CSS <code>box-shadow</code>, j'ai trouvé par hasard un moyen de créer de multiples carrés en multipliant les ombres. En fouinant un peu sur le net, j'ai pu voir que cette technique avait déjà été utilisée pour faire du pixel art, voici donc un petit feedback de ma part !
 ---
 
 ## La propriété box-shadow
