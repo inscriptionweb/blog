@@ -209,3 +209,17 @@ blockquote {
         }
     }
 }
+kbd {
+    background-color: $grey_light;
+    border: 1px solid $grey;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 0 2px $white inset;
+    color: $grey_dark;
+    display: inline-block;
+    font-size: 80%;
+    line-height: 1.4;
+    margin: 0 .1em;
+    padding: .1em .5em;
+    text-shadow: 0 1px 0 $white;
+    vertical-align: text-top;
+}

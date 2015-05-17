@@ -15,12 +15,13 @@ function draw() {
       canvas  = document.querySelector('#bg'),
       title   = document.querySelector('#title'),
       context = canvas.getContext('2d'),
+      colors  = (canvas.classList && canvas.classList.contains('page-home') ? ['#000', '#758', '#d5cdd8', '#758', '#000'] : [cdark, clight, cdark]),
       pattern = Trianglify({
         cell_size: 70,
-        variance: 1,
-        width: window.innerWidth,
-        height: title.clientHeight,
-        x_colors:  [cdark, clight, cdark]
+        variance:  1,
+        width:     window.innerWidth,
+        height:    title.clientHeight,
+        x_colors:  colors
       });
   pattern.canvas(canvas);
 }
@@ -53,6 +54,29 @@ function headingAnchors() {
   });
 }
 document.addEventListener('DOMContentLoaded', headingAnchors, false);
+
+// Double click on code block to select all
+function selectCode() {
+  Array.prototype.forEach.call(document.querySelectorAll('pre code'), function(code, index){
+    code.addEventListener('dblclick', function(event) {
+        var code = event.target;
+        if (document.body.createTextRange) { // ms
+          var range = document.body.createTextRange();
+          range.moveToElementText(code);
+          range.select();
+        } else if (window.getSelection) { // moz, opera, webkit
+          var selection = window.getSelection();            
+          var range = document.createRange();
+          range.selectNodeContents(code);
+          selection.removeAllRanges();
+          selection.addRange(range);
+        }
+      }, 
+      false
+    );
+  });  
+}
+document.addEventListener('DOMContentLoaded', selectCode, false);
 
 // Infinite load
 function infiniteLoad() {

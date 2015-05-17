@@ -24,7 +24,7 @@ Awesome Cookie Manager en revanche le fait parfaitement, en fournissant :
 En mini-bonus, vous avez la possibilité d'utiliser les différents skins de jQuery UI, ce qui évite d'avoir à perdre 17 rétines par jour avec le skin de base.
 
 
-## Liens :
+## Liens
 [Awesome Cookie Manager sur le Chrome Web Store](https://chrome.google.com/webstore/detail/awesome-cookie-manager-be/hcpidejphgpcgfnpiehkcckkkemgneif)  
 [Le site des développeurs](http://www.upway2late.com/)  
 [Vanilla Cookie Manager sur le Chrome Web Store](https://chrome.google.com/webstore/detail/vanilla-cookie-manager/gieohaicffldbmiilohhggbidhephnjj)  

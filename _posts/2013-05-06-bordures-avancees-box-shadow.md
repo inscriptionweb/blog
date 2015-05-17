@@ -5,7 +5,7 @@ date:   2013-05-06
 tags: 
 - css
 description: >
-  Vu que je teste la propriété `box-shadow` en ce moment, je vais vous balancer une autre petite astuce qui m'est venue à l'idée dans la journée.   
+  Vu que je teste la propriété **box-shadow** en ce moment, je vais vous balancer une autre petite astuce qui m'est venue à l'idée dans la journée.   
   En calculant bien ses décalages, il est possible de simuler l'ajout de plusieurs bordures sur un même élément.
 ---
 
@@ -90,7 +90,7 @@ DOUBLE RAINBOWS !! RAINBOWS EVERYWHERE !!11!
 
 Vous pouvez en découvrir plein d'autres dans la démo, hébergée sur le blog ou CodePen (liens ci-dessous).
 
-## Liens :
+## Liens
 [**Démonstration**](http://blog.smarchal.com/demos/bordures-avancees-box-shadow/)   
 [Spécifications de la propriété box-shadow](http://www.w3.org/TR/css3-background/#the-box-shadow)   
 [La démo sur CodePen](http://codepen.io/zessx/pen/IdFnl)   

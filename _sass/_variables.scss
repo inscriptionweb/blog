@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-$defaultcolor       : #9E79D7;
+$defaultcolor       : #A56FC0;
 $colors: (
   // No tag
   ""                : $defaultcolor,
@@ -21,20 +21,20 @@ $colors: (
 
   // Orange
   "sublime-text"    : #FF8100,
-  "git"             : #F05133,
   "html"            : #F16528,
 
   // Red
+  "git"             : #F05133,
   "apache"          : #EF0031,
 
   // Pink
   "sass"            : #CC6698,
 
   // Purple
-  "divers"          : #9E79D7,
-  "regex"           : #9E79D7,
-  "software"        : #9E79D7,
-  "bash"            : #9E79D7
+  "divers"          : $defaultcolor,
+  "regex"           : $defaultcolor,
+  "software"        : $defaultcolor,
+  "bash"            : $defaultcolor
   );
 
 $white              : #fff;
