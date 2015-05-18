@@ -89,6 +89,7 @@ document.addEventListener('DOMContentLoaded', selectCode, false);
 
 // Infinite load
 function infiniteLoad() {
+  console.log('infiniteLoad');
   var allPosts = [],
       isFetchingPosts = false,
       shouldFetchPosts = true,
@@ -113,6 +114,7 @@ function infiniteLoad() {
       if(allPosts.length <= postsToLoad) {
         disableFetching();
       }
+      document.addEventListener('scroll', scroller, false);
     }
   };
   request.send();
@@ -121,14 +123,15 @@ function infiniteLoad() {
     shouldFetchPosts = false;
   }
   function scroller() {
+    console.log('scroller');
     if(!shouldFetchPosts || isFetchingPosts) return;
     if(document.body.scrollTop + window.innerHeight + 100 > document.body.offsetHeight) {
       fetchPosts();
     }
   }
-  document.addEventListener('scroll', scroller, false);
 
   function fetchPosts() {
+    console.log('fetchPosts');
     if (!allPosts) return;
     isFetchingPosts = true;
     var loadedPosts = 0,
@@ -152,6 +155,7 @@ function infiniteLoad() {
   }
 
   function fetchPostWithIndex(index, callback) {
+    console.log('fetchPostWithIndex', index);
     var postURL = allPosts[index].url;
     var request = new XMLHttpRequest();
     request.open('GET', postURL, true);
@@ -175,6 +179,7 @@ function infiniteLoad() {
   }
 
   function disableFetching() {
+    console.log('disableFetching');
     shouldFetchPosts = false;
     isFetchingPosts = false;
     if(loader = document.querySelector('.loader')) {
