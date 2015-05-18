@@ -1,0 +1,64 @@
+---
+layout: listing
+---
+<header>
+	<h1 id="title">{{ page.title }}</h1>
+	<a href="/" class="link-home"><span>Accueil</span></a>
+	<canvas id="bg"></canvas>
+</header>
+
+<section class="articles">
+	{% assign limit = 5 %}
+	{% for post in site.posts %}
+		{% for tag in post.tags %}
+			{% if tag == page.tag %}
+				{% capture limit %}{{ limit | minus:1 }}{% endcapture %}
+				{% if limit contains '-' %}
+					{% break %}
+				{% endif %}
+
+				{% assign monthNum = post.date | date: "%-m" %}
+				{% assign month = '' %}
+				{% case monthNum %}
+					{% when '1' %}{% assign month = 'Janvier' %}
+					{% when '2' %}{% assign month = 'Février' %}
+					{% when '3' %}{% assign month = 'Mars' %}
+					{% when '4' %}{% assign month = 'Avril' %}
+					{% when '5' %}{% assign month = 'Mai' %}
+					{% when '6' %}{% assign month = 'Juin' %}
+					{% when '7' %}{% assign month = 'Juillet' %}
+					{% when '8' %}{% assign month = 'Août' %}
+					{% when '9' %}{% assign month = 'Septembre' %}
+					{% when '10' %}{% assign month = 'Octobre' %}
+					{% when '11' %}{% assign month = 'Novembre' %}
+					{% when '12' %}{% assign month = 'Décembre' %}
+				{% endcase %}
+
+				<article data-color="{{ page.tag }}">
+					<aside>
+						<p class="date">{{ post.date | date: "%d " }}{{ month }}{{ post.date | date: " %Y" }}</p>
+
+						{% if post.update %}
+						<p class="update"><label>Mise à jour :</label> {{ post.update | date: "%d %B %Y" }}</p>
+						{% endif %}
+
+						<div class="article-preview">
+							<h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+							{{ post.description }}
+						</div>
+
+						{% if post.tags %}
+						<ul class="tags">
+						{% for tag in post.tags %}
+							<li><a href="/{{ site.tag_dir }}/{{ tag }}">{{ tag }}</a></li>
+						{% endfor %}
+						</ul>
+						{% endif %}
+					</aside>
+
+				</article>
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+</section>
+<div class="loader" data-tag="{{ page.tag }}"></div>

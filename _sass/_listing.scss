@@ -2,6 +2,8 @@
 
 section.articles {
 	article {
+		padding-top: 0;
+
 		h2 {
 			display: block;
 			text-align: center;
@@ -39,6 +41,38 @@ section.articles {
 			display: none;
 		}
 	}
+}
+section.categories {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 100%;
+    max-width: $content_width + $content_padding * 2;
+	margin: 0 auto;
+
+    > a {
+    	flex-grow: 1;
+    	color: $grey;
+		padding: $tag_padding;
+		margin: $tag_padding / 4;
+		line-height: $font_size;
+		box-shadow: inset 0 0 0 1px $grey;
+		text-decoration: none;
+
+		@each $tag, $color in $colors {
+			&[data-color="#{$tag}"] {
+				&:hover,
+				&:focus {
+					color: $color;
+					box-shadow: inset 0 0 0 2px $color;
+				}
+			}
+		}
+    }
+    &:after {
+    	content: '';
+    	flex-grow: 99999;
+    }
 }
 .loader {
 	&.end {

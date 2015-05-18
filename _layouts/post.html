@@ -1,15 +1,33 @@
 ---
 layout: default
 ---
+
+{% assign monthNum = page.date | date: "%-m" %}
+{% assign month = '' %}
+{% case monthNum %}
+  {% when '1' %}{% assign month = 'Janvier' %}
+  {% when '2' %}{% assign month = 'Février' %}
+  {% when '3' %}{% assign month = 'Mars' %}
+  {% when '4' %}{% assign month = 'Avril' %}
+  {% when '5' %}{% assign month = 'Mai' %}
+  {% when '6' %}{% assign month = 'Juin' %}
+  {% when '7' %}{% assign month = 'Juillet' %}
+  {% when '8' %}{% assign month = 'Août' %}
+  {% when '9' %}{% assign month = 'Septembre' %}
+  {% when '10' %}{% assign month = 'Octobre' %}
+  {% when '11' %}{% assign month = 'Novembre' %}
+  {% when '12' %}{% assign month = 'Décembre' %}
+{% endcase %}
+
 <header>
 	<h1 id="title">{{ page.title }}</h1>
-	<a href="/" class="home"><span>Accueil</span></a>
+	<a href="/" class="link-home"><span>Accueil</span></a>
 	<canvas id="bg"></canvas>
 </header>
 
-<article data-color="{{ page.tags | first }}">
+<article class="full-article" data-color="{{ page.tags | first }}">
 	<aside>
-		<p class="date">{{ page.date | localize: "%d %B %Y" }}</p>
+		<p class="date">{{ page.date | date: "%d " }}{{ month }}{{ page.date | date: " %Y" }}</p>
 		{% if page.update %}
 		<p class="update"><label>Mise à jour :</label> {{ page.update | date: "%d %B %Y" }}</p>
 		{% endif %}
@@ -20,7 +38,7 @@ layout: default
 		{% if page.tags %}
 		<ul class="tags">
 		{% for tag in page.tags %}
-			<li><a href="/{{ tag }}">{{ tag }}</a></li>
+			<li><a href="/{{ site.tag_dir }}/{{ tag }}">{{ tag }}</a></li>
 		{% endfor %}
 		</ul>
 		{% endif %}

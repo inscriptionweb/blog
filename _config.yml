@@ -6,17 +6,21 @@ description: >
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: ""
-url: "http://blog2.smarchal.com"
+url: http://blog2.smarchal.com
 twitter_username: zessx
 github_username:  zessx
-permalink: /:title
 
 # Gems
 gems:
   - octopress-autoprefixer
-#  - jekyll-i18n
 
 # Build settings
+safe: false
 markdown: kramdown
+permalink: /:title
 sass:
   style: compressed
+
+# Tags settings
+tag_dir: category
+tag_title_prefix: 'Catégorie : '
