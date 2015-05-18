@@ -2,15 +2,15 @@
 layout: listing
 ---
 <header>
-    <h1 id="title">Catégories</h1>
+    <h1 id="title">Tags</h1>
     <a href="/" class="link-home"><span>Accueil</span></a>
     <canvas id="bg" class="page-generic"></canvas>
 </header>
 
-<section class="categories">
+<section class="tags">
     {% capture tags %}{% for tag in site.tags %}{{ tag[0] }}{% unless forloop.last %}|{% endunless %}{% endfor %}{% endcapture %}
     {% assign sortedtags = tags | split: '|' | sort %}
     {% for tag in sortedtags %}
-        <a href="/{{ site.tag_dir }}/{{ tag }}" data-color="{{ tag }}">{{ tag }}</a>
+        <a href="/tag/{{ tag }}" data-color="{{ tag }}">{{ tag }}</a>
     {% endfor %}
 </section>

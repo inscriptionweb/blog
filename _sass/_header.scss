@@ -28,7 +28,7 @@ header {
     }
   }
   .link-home,
-  .link-categories {
+  .link-tags {
     position: fixed;
     top: $content_padding / 2;
     left: $content_padding / 2;
@@ -59,7 +59,7 @@ header {
       }
     }
   }
-  .link-categories {
+  .link-tags {
     &:before {
       content: "■";
     }

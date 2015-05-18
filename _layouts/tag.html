@@ -2,7 +2,7 @@
 layout: listing
 ---
 <header>
-	<h1 id="title">{{ page.title }}</h1>
+	<h1 id="title">Tag : {{ page.tag }}</h1>
 	<a href="/" class="link-home"><span>Accueil</span></a>
 	<canvas id="bg"></canvas>
 </header>
@@ -39,7 +39,25 @@ layout: listing
 						<p class="date">{{ post.date | date: "%d " }}{{ month }}{{ post.date | date: " %Y" }}</p>
 
 						{% if post.update %}
-						<p class="update"><label>Mise à jour :</label> {{ post.update | date: "%d %B %Y" }}</p>
+
+						{% assign updateMonthNum = post.update | date: "%-m" %}
+						{% assign updateMonth = '' %}
+						{% case updateMonthNum %}
+						  {% when '1' %}{% assign updateMonth = 'Janvier' %}
+						  {% when '2' %}{% assign updateMonth = 'Février' %}
+						  {% when '3' %}{% assign updateMonth = 'Mars' %}
+						  {% when '4' %}{% assign updateMonth = 'Avril' %}
+						  {% when '5' %}{% assign updateMonth = 'Mai' %}
+						  {% when '6' %}{% assign updateMonth = 'Juin' %}
+						  {% when '7' %}{% assign updateMonth = 'Juillet' %}
+						  {% when '8' %}{% assign updateMonth = 'Août' %}
+						  {% when '9' %}{% assign updateMonth = 'Septembre' %}
+						  {% when '10' %}{% assign updateMonth = 'Octobre' %}
+						  {% when '11' %}{% assign updateMonth = 'Novembre' %}
+						  {% when '12' %}{% assign updateMonth = 'Décembre' %}
+						{% endcase %}
+
+						<p class="update"><label>Mise à jour :</label> {{ post.update | date: "%d " }}{{ updateMonth }}{{ post.update | date: " %Y" }}</p>
 						{% endif %}
 
 						<div class="article-preview">
@@ -50,7 +68,7 @@ layout: listing
 						{% if post.tags %}
 						<ul class="tags">
 						{% for tag in post.tags %}
-							<li><a href="/{{ site.tag_dir }}/{{ tag }}">{{ tag }}</a></li>
+							<li><a href="/tag/{{ tag }}">{{ tag }}</a></li>
 						{% endfor %}
 						</ul>
 						{% endif %}

@@ -3,18 +3,10 @@ layout: post
 title:  "Problème d'affichage des contrôles Google Maps"
 date:   2015-02-05
 tags: 
-- software
+- js
 description: >
-  Hein ? MS-DOS évolue ? ... ... MS-DOS évolue en Cygwin !
+  Si vous rencontrez des problème d'affichage des contrôles en utilisant Google Maps Javascript API v3, ce mini article est pour vous !
 ---
-# Problème d'affichage des contrôles Google Maps
-- zessx
-- zessx
-- 2015/02/05
-- JS
-- published
-	
-Si vous rencontrez des problème d'affichage des contrôles en utilisant Google Maps Javascript API v3, ce mini article est pour vous !
 
 ## Le problème rencontré
 

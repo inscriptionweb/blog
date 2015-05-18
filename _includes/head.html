@@ -4,7 +4,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+	<meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+	<meta property="og:site_name" content="{{ site.title }}" />
+	<meta property="og:locale" content="fr_FR" />
+	<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+	<meta property="og:image" content="{{ "/images/zessx.png" | prepend: site.baseurl }}" />
+	<meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />{% if page.layout == "listing" %}
+	<meta property="og:type" content="website" />{% else %}
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="{{ page.title }}" />
+	<meta property="og:article:author" content="zessx" />{% if page.date %}
+	<meta property="og:article:published" content="{{ page.date | date: "%Y-%m-%d" }}" />{% endif %}{% if page.update %}
+	<meta property="og:article:modified_time" content="{{ page.update | date: "%Y-%m-%d" }}" />{% endif %}{% if page.tags %}{% for tag in page.tags %}
+	<meta property="og:article:tag" content="{{ tag }}" />{% endfor %}{% endif %}{% endif %}
+
+	<meta property="twitter:card" content="summary" />
+	<meta property="twitter:site" content="{{ site.twitter_username }}" />
+	<meta property="twitter:creator" content="{{ site.twitter_username }}" />
+	<meta property="twitter:image" content="{{ "/images/zessx.png" | prepend: site.baseurl }}" />
+	<meta property="twitter:image:width" content="360" />
+	<meta property="twitter:image:height" content="360" />
+	<meta property="twitter:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />{% if page.layout == "listing" %}
+	<meta property="twitter:title" content="{{ page.title }}" />{% endif %}
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,500">
 	<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">

@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', drawThrottlerInit, false);
 
 // Sticky header
 function stickyHeaderInit() {
-  Array.prototype.forEach.call(document.querySelectorAll('.full-article, .articles, .categories'), function(el, i){
+  Array.prototype.forEach.call(document.querySelectorAll('article.full-article, section.articles, section.tags'), function(el, i){
     el.style.paddingTop = (document.querySelector('header').clientHeight + 50) + 'px';
   });
   stickyHeader();
