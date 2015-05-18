@@ -9,7 +9,7 @@
 	<meta property="og:site_name" content="{{ site.title }}" />
 	<meta property="og:locale" content="fr_FR" />
 	<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
-	<meta property="og:image" content="{{ "/images/zessx.png" | prepend: site.baseurl }}" />
+	<meta property="og:image" content="{{ "/images/zessx.png" | prepend: site.baseurl | prepend: site.url }}" />
 	<meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />{% if page.layout == "listing" %}
 	<meta property="og:type" content="website" />{% else %}
 	<meta property="og:type" content="article" />
@@ -22,19 +22,20 @@
 	<meta property="twitter:card" content="summary" />
 	<meta property="twitter:site" content="{{ site.twitter_username }}" />
 	<meta property="twitter:creator" content="{{ site.twitter_username }}" />
-	<meta property="twitter:image" content="{{ "/images/zessx.png" | prepend: site.baseurl }}" />
+	<meta property="twitter:image" content="{{ "/images/zessx.png" site.baseurl | prepend: site.url }}" />
 	<meta property="twitter:image:width" content="360" />
 	<meta property="twitter:image:height" content="360" />
 	<meta property="twitter:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />{% if page.layout == "listing" %}
 	<meta property="twitter:title" content="{{ page.title }}" />{% endif %}
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,500">
-	<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl | prepend: site.url }}">
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+	<link rel="me" href="https://twitter.com/{{ site.twitter_username }}">
 
-	<script src="{{ "/js/trianglify.min.js" | prepend: site.baseurl }}" type="text/javascript"></script>
-	<script src="{{ "/js/app.js" | prepend: site.baseurl }}" type="text/javascript"></script>
+	<script src="{{ "/js/trianglify.min.js" | prepend: site.baseurl | prepend: site.url }}" type="text/javascript"></script>
+	<script src="{{ "/js/app.js" | prepend: site.baseurl | prepend: site.url }}" type="text/javascript"></script>
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-32364969-2']);
