@@ -62,11 +62,19 @@ header {
       content: "■";
     }
   }
-  canvas {
+  #bg {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
+    background: lighten($defaultcolor, 20%);
+
+    @each $tag, $color in $colors {
+        body[data-color="#{$tag}"] & {
+            background: radial-gradient(ellipse at center, $color 0%, darken($color, 50%) 100%);
+        }
+    }
+
   }
 
   &.sticky,

@@ -1,35 +1,117 @@
 // Trianglified header
-var drawTimeout, titleHeightFull;
-function drawThrottlerInit() {
-  titleHeightFull = document.querySelector('#title').clientHeight;
-  drawThrottler();
-}
-function drawThrottler() {
-  if ( !drawTimeout ) {
-    drawTimeout = setTimeout(function() {
-      drawTimeout = null;
-      draw();
-     }, 66);
+function drawHeader() {
+  var titleHeightFull = document.querySelector('#title').clientHeight;
+  var refreshDuration = 10000;
+  var refreshTimeout;
+  var numPointsX;
+  var numPointsY;
+  var unitWidth;
+  var unitHeight;
+  var points;
+
+  var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('width',window.innerWidth);
+  svg.setAttribute('height',titleHeightFull);
+  document.querySelector('#bg').appendChild(svg);
+
+  var unitSize = (window.innerWidth+titleHeightFull)/20;
+  numPointsX = Math.ceil(window.innerWidth/unitSize)+1;
+  numPointsY = Math.ceil(titleHeightFull/unitSize)+1;
+  unitWidth = Math.ceil(window.innerWidth/(numPointsX-1));
+  unitHeight = Math.ceil(titleHeightFull/(numPointsY-1));
+
+  points = [];
+
+  for(var y = 0; y < numPointsY; y++) {
+      for(var x = 0; x < numPointsX; x++) {
+          points.push({x:unitWidth*x, y:unitHeight*y, originX:unitWidth*x, originY:unitHeight*y});
+      }
+  }
+
+  randomizeHeader();
+
+  for(var i = 0; i < points.length; i++) {
+      if(points[i].originX != unitWidth*(numPointsX-1) && points[i].originY != unitHeight*(numPointsY-1)) {
+          var topLeftX = points[i].x;
+          var topLeftY = points[i].y;
+          var topRightX = points[i+1].x;
+          var topRightY = points[i+1].y;
+          var bottomLeftX = points[i+numPointsX].x;
+          var bottomLeftY = points[i+numPointsX].y;
+          var bottomRightX = points[i+numPointsX+1].x;
+          var bottomRightY = points[i+numPointsX+1].y;
+
+          var rando = Math.floor(Math.random()*2);
+
+          for(var n = 0; n < 2; n++) {
+              var polygon = document.createElementNS(svg.namespaceURI, 'polygon');
+
+              if(rando==0) {
+                  if(n==0) {
+                      polygon.point1 = i;
+                      polygon.point2 = i+numPointsX;
+                      polygon.point3 = i+numPointsX+1;
+                      polygon.setAttribute('points',topLeftX+','+topLeftY+' '+bottomLeftX+','+bottomLeftY+' '+bottomRightX+','+bottomRightY);
+                  } else if(n==1) {
+                      polygon.point1 = i;
+                      polygon.point2 = i+1;
+                      polygon.point3 = i+numPointsX+1;
+                      polygon.setAttribute('points',topLeftX+','+topLeftY+' '+topRightX+','+topRightY+' '+bottomRightX+','+bottomRightY);
+                  }
+              } else if(rando==1) {
+                  if(n==0) {
+                      polygon.point1 = i;
+                      polygon.point2 = i+numPointsX;
+                      polygon.point3 = i+1;
+                      polygon.setAttribute('points',topLeftX+','+topLeftY+' '+bottomLeftX+','+bottomLeftY+' '+topRightX+','+topRightY);
+                  } else if(n==1) {
+                      polygon.point1 = i+numPointsX;
+                      polygon.point2 = i+1;
+                      polygon.point3 = i+numPointsX+1;
+                      polygon.setAttribute('points',bottomLeftX+','+bottomLeftY+' '+topRightX+','+topRightY+' '+bottomRightX+','+bottomRightY);
+                  }
+              }
+              polygon.setAttribute('fill','rgba(0,0,0,'+(Math.random()/3)+')');
+              var animate = document.createElementNS('http://www.w3.org/2000/svg','animate');
+              animate.setAttribute('fill','freeze');
+              animate.setAttribute('attributeName','points');
+              animate.setAttribute('dur',refreshDuration+'ms');
+              animate.setAttribute('calcMode','linear');
+              polygon.appendChild(animate);
+              svg.appendChild(polygon);
+          }
+      }
+  }
+
+  refreshHeader();
+
+  function randomizeHeader() {
+      for(var i = 0; i < points.length; i++) {
+          if(points[i].originX != 0 && points[i].originX != unitWidth*(numPointsX-1)) {
+              points[i].x = points[i].originX + Math.random()*unitWidth-unitWidth/2;
+          }
+          if(points[i].originY != 0 && points[i].originY != unitHeight*(numPointsY-1)) {
+              points[i].y = points[i].originY + Math.random()*unitHeight-unitHeight/2;
+          }
+      }
+  }
+
+  function refreshHeader() {
+      clearTimeout(refreshTimeout);
+      randomizeHeader();
+      for(var i = 0; i < document.querySelector('#bg svg').childNodes.length; i++) {
+          var polygon = document.querySelector('#bg svg').childNodes[i];
+          var animate = polygon.childNodes[0];
+          if(animate.getAttribute('to')) {
+              animate.setAttribute('from',animate.getAttribute('to'));
+          }
+          animate.setAttribute('to',points[polygon.point1].x+','+points[polygon.point1].y+' '+points[polygon.point2].x+','+points[polygon.point2].y+' '+points[polygon.point3].x+','+points[polygon.point3].y);
+          animate.beginElement();
+      }
+      refreshTimeout = setTimeout(function() {refreshHeader();}, refreshDuration);
   }
 }
-function draw() {
-  var body    = document.body,
-      clight  = getComputedStyle(body)['color'],
-      cdark   = getComputedStyle(body)['backgroundColor'],
-      canvas  = document.querySelector('#bg'),
-      context = canvas.getContext('2d'),
-      colors  = (canvas.classList && canvas.classList.contains('page-generic') ? ['#000', '#758', '#d5cdd8', '#758', '#000'] : [cdark, clight, cdark]),
-      pattern = Trianglify({
-        cell_size: 70,
-        variance:  1,
-        width:     window.innerWidth,
-        height:    titleHeightFull,
-        x_colors:  colors
-      });
-  pattern.canvas(canvas);
-}
-window.addEventListener('resize', drawThrottler, false);
-window.addEventListener('DOMContentLoaded', drawThrottlerInit, false);
+window.addEventListener('DOMContentLoaded', drawHeader, false);
 
 // Sticky header
 function stickyHeaderInit() {
