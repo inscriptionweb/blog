@@ -71,7 +71,7 @@ function drawHeader() {
                       polygon.setAttribute('points',bottomLeftX+','+bottomLeftY+' '+topRightX+','+topRightY+' '+bottomRightX+','+bottomRightY);
                   }
               }
-              polygon.setAttribute('fill','rgba(0,0,0,'+(Math.random()/3)+')');
+              polygon.setAttribute('fill','rgba(0,0,0,'+(Math.random()/10)+')');
               var animate = document.createElementNS('http://www.w3.org/2000/svg','animate');
               animate.setAttribute('fill','freeze');
               animate.setAttribute('attributeName','points');
