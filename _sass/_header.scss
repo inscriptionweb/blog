@@ -30,11 +30,15 @@ header {
     position: fixed;
     top: $content_padding / 2;
     left: $content_padding / 2;
-    color: $defaultcolor;
+    color: $white;
     text-decoration: none;
     font-size: 14px;
     line-height: $font_size;
     z-index: 2;
+
+    [data-color="default"] & {
+      color: $defaultcolor;
+    }
 
     &:before {
       content: "◄";
