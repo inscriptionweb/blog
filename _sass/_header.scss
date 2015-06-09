@@ -11,6 +11,10 @@ header {
   overflow: hidden;
   border-bottom: 1px solid $grey;
 
+  [data-color="default"] & {
+    color: $defaultcolor;
+  }
+
   h1 {
     position: relative;
     font-size: 60px;
