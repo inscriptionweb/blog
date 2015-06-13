@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title:  "Sublime Text 2 bloqué en éditeur par défaut"
 date:   2014-06-03

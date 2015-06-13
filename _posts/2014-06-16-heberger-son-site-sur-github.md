@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title:  "Héberger son site sur GitHub"
 date:   2014-06-16

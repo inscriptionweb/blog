@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Utiliser UTF8 par défaut avec MySQL"
-date:   9999-99-99
+date:   2015-01-01
 tags:
 - sql 
 description: >

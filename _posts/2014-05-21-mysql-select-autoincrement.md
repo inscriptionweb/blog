@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title:  "Avoir une colonne auto-incrémentée dans une requête SELECT"
 date:   2014-05-21

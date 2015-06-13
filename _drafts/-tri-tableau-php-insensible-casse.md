@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Le tri de tableaux insensible à la casse en PHP"
-date:   9999-99-99
+date:   2015-01-01
 tags:
 - php
 description: >

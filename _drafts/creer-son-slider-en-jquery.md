@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Créer son slider en jQuery"
-date:   9999-99-99
+date:   2015-01-01
 tags:
 - js 
 description: >

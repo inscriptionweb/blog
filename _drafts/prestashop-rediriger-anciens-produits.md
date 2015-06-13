@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Prestashop : rediriger les anciens produits"
-date:   9999-99-99
+date:   2015-01-01
 tags:
 - prestashop
 - php 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Problème d'affichage des dossiers dans la sidebar de Sublime Text 3"
-date:   9999-99-99
+date:   2015-01-01
 tags:
 - sublimte-text 
 description: >

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Les cartes SVG interactives"
-date:   9999-99-99
+date:   2015-01-01
 tags:
 - svg
 - html 
