@@ -44,7 +44,11 @@ $grey_dark          : #333;
 
 $logo_height        : 180px;
 $header_height      : 250px;
-$content_width      : 800px;
+$content_width      : (
+  mobile:    100%,
+  tablet:    500px,
+  desktop:   800px
+);
 $content_padding    : 50px;
 $section_padding    : 40px;
 $tag_padding        : 30px;

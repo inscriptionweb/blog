@@ -5,7 +5,8 @@ description: >
   Laboratoire public, ce blog est l'aggrégation de toutes
   mes expériences dans le domaine du développement web.
 baseurl: ""
-url: http://blog2.smarchal.com
+# url: http://blog2.smarchal.com
+url: http://localhost:4000
 twitter_username: zessx
 github_username:  zessx
 

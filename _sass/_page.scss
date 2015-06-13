@@ -40,20 +40,32 @@ a {
 
 h2 {
     @extend %font-regular;
-    font-size: 180%;
+    font-size: 150%;
 
     &:before {
         content: '';
         display: block;
-        width: $content_width / 4;
+        width: map-get($content_width, desktop) / 4;
         height: 1px;
         background: $grey_light;
         margin: $section_padding auto ($section_padding / 2);
     }
+    @include media($until: tablet) {
+        code {
+            word-wrap: break-word;
+        }
+    }
+    @include media($from: tablet) {
+        font-size: 180%;
+    }
 }
 h3 {
     @extend %font-regular;
-    font-size: 140%;
+    font-size: 110%;
+
+    @include media($from: tablet) {
+        font-size: 140%;
+    }
 }
 h4 {
     @extend %font-regular;
@@ -77,16 +89,19 @@ h2, h3, h4 {
         left: 0;
 
         &:before {
-            content: "§";
             position: absolute;
             color: $grey;
             left: $section_padding * -1;
-            padding-right: $content_width;
+            padding-right: map-get($content_width, desktop);
             bottom: -($content_padding + $font_size) * 2;
             text-decoration: none;
             font-style: normal;
             opacity: 0;
             transition: opacity .3s;
+
+            @include media($from: tablet) {
+                content: "§";
+            }
         }
 
     }
@@ -103,7 +118,6 @@ p, li {
     a {
         position: relative;
         color: inherit;
-        white-space: nowrap;
         transition: all .3s;
 
         @each $tag, $color in $colors {
@@ -117,6 +131,9 @@ p, li {
                 }
             }
         }
+        @include media($from: tablet) {
+            white-space: nowrap;
+        }
     }
 }
 code {
@@ -126,8 +143,6 @@ code {
 }
 pre {
     display: block;
-    // font-family: "Courier New" monospace;
-    // letter-spacing: 0;
     position: relative;
     margin: $section_padding 0;
     padding: $section_padding 0;
@@ -147,14 +162,20 @@ pre {
     &:after {
         @extend %font-regular;
         content: '//';
-        font-size: 55px;
+        font-size: 28px;
         position: absolute;
+        top: 40px;
+        left: -50px;
         color: $grey_light;
-        top: 20px;
-        left: $section_padding * -2;
         margin-left: 15px;
         line-height: 1;
         z-index: 2;
+
+        @include media($from: tablet) {
+            font-size: 55px;
+            top: 20px;
+            left: $section_padding * -2;
+        }
     }
 
     code {
@@ -163,8 +184,7 @@ pre {
         padding: 0;
         background: inherit;
         z-index: 2;
-        overflow: overlay;
-        padding-bottom: 17px;
+        overflow: auto;
     }
 }
 blockquote {

@@ -2,11 +2,18 @@
 
 article {
     width: 100%;
-    max-width: $content_width + $content_padding * 2;
     margin: 0 auto;
     padding: $content_padding;
     line-height: 1.5;
     transition: margin-top $transition_header;
+
+    @include media($from: tablet) {
+        padding: $content_padding 0;
+        width: map-get($content_width, tablet);
+    }
+    @include media($from: desktop) {
+        width: map-get($content_width, desktop);
+    }
 
     ul {
         list-style: outside disc;
@@ -32,11 +39,24 @@ article {
             &:before,
             &:after {
                 content: '';
-                display: inline-block;
-                width: $content_width / 6;
+                display: block;
+                margin: 0 auto 20px;
+                width: 80%;
                 height: 1px;
-                margin: 0 10px 6px;
                 background: $grey_light;
+
+                @include media($from: tablet) {
+                    display: inline-block;
+                    width: 16%;
+                    margin: 0 10px 6px;
+                }
+            }
+            &:after {
+                content: none;
+
+                @include media($from: tablet) {
+                    content: '';
+                }
             }
         }
         .update {
@@ -81,7 +101,7 @@ article {
     }
     img,
     iframe {
-        max-width: $content_width;
+        max-width: 100%;
         margin: 0 auto;
     }
 }

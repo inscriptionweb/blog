@@ -6,14 +6,23 @@ body > footer {
     padding-bottom: 80px;
 
     @at-root #partager-block {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 $content_padding;
         display: flex;
         position: relative;
-        justify-content: flex-end;
+        justify-content: center;
         line-height: 120px;
-        margin: 0 auto;
         color: $white;
-        max-width: $content_width + (2 * $content_padding);
-        padding: 0 $content_padding;
+
+        @include media($from: tablet) {
+            padding: 0;
+            justify-content: flex-end;
+            width: map-get($content_width, tablet);
+        }
+        @include media($from: desktop) {
+            width: map-get($content_width, desktop);
+        }
 
         &:before {
             content: '';
@@ -28,11 +37,16 @@ body > footer {
         }
 
         h2{
+            display: none;
             margin-right: auto;
+            top: -8px;
             z-index: 2;
 
             &:before {
                 content: none;
+            }
+            @include media($from: tablet) {
+                display: block;
             }
         }
         > a {
@@ -89,10 +103,17 @@ body > footer {
     }
 
     @at-root #commentaires-block {
-        padding: ($section_padding / 2) 0 ($section_padding * 2);
+        width: 100%;
         margin: $section_padding auto 0;
-        max-width: $content_width + (2 * $content_padding);
         padding: 0 $content_padding;
+
+        @include media($from: tablet) {
+            padding: 0;
+            width: map-get($content_width, tablet);
+        }
+        @include media($from: desktop) {
+            width: map-get($content_width, desktop);
+        }
 
         h2 {
             color: $grey_dark;
