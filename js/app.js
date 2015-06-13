@@ -146,6 +146,15 @@ function headingAnchors() {
 }
 document.addEventListener('DOMContentLoaded', headingAnchors, false);
 
+// Open social links in new tab
+function socialLinksInNewTab() {
+  var links = document.querySelectorAll('#partager-block a');
+  Array.prototype.forEach.call(links, function(el, i){
+    el.setAttribute('target', '_blank');
+  });
+}
+document.addEventListener('DOMContentLoaded', socialLinksInNewTab, false);
+
 // Double click on code block to select all
 function selectCode() {
   Array.prototype.forEach.call(document.querySelectorAll('pre code'), function(code, index){
