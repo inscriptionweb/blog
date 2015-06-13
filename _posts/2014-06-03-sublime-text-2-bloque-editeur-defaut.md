@@ -3,7 +3,7 @@ layout: post
 title:  "Sublime Text 2 bloqué en éditeur par défaut"
 date:   2014-06-03
 tags: 
-- sublimet-text
+- sublime-text
 - software
 description: >
   Si vous avez tenté de désinstaller Sublime Text 2 sur Windows, vous avez peut-être constaté que celui-ci était bloqué en tant qu'éditeur par défaut.
