@@ -50,11 +50,6 @@ h2 {
         background: $grey_light;
         margin: $section_padding auto ($section_padding / 2);
     }
-    @include media($until: tablet) {
-        code {
-            word-wrap: break-word;
-        }
-    }
     @include media($from: tablet) {
         font-size: 180%;
     }
@@ -140,6 +135,10 @@ code {
     display: inline;
     padding: 0 4px;
     background: $grey_light;
+
+    @include media($until: tablet) {
+        word-wrap: break-word;
+    }
 }
 pre {
     display: block;
@@ -185,6 +184,10 @@ pre {
         background: inherit;
         z-index: 2;
         overflow: auto;
+
+        @include media($until: tablet) {
+            word-wrap: normal;
+        }
     }
 }
 blockquote {
