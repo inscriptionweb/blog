@@ -143,9 +143,11 @@ On utilise quelques fonctions de base de jQuery dans ce script :
 * [click()](http://api.jquery.com/click/) : définit un EventListener sur l'élément (pour l'évènement onclick)
 
 ## Le résultat
+
 <center><iframe src="demos/accordeon-jquery/index.html" width="600" height="320"></iframe></center>
 
-## Liens :
+## Liens
+
 [**Démonstration**](http://blog.smarchal.com/demos/accordeon-de-contenu-jquery/index.html)   
 [Documentation jQuery](http://api.jquery.com/)   
 [Le composant Accordion, sur jQuery UI](http://jqueryui.com/accordion/)   

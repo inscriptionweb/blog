@@ -3,7 +3,6 @@ layout: post
 title:  "Générer des mots de passe"
 date:   2015-01-01
 tags:
-- js
 - php 
 description: >
   Comment générer simplement un mot de passe ?
@@ -43,8 +42,7 @@ Voici une solution que je propose. Celle-ci n'est pas parfaite, disons qu'elle s
 	}
 	echo generate('mypassword', 12); // ZTg2ODFkNTIy 
 
-Le principe est de récupérer le sha1 de la seed (en y ajoutant un salt fixe pour éviter l'utilisation de hashtables), puis de l'encoder en base 64. Cette base utilise le charset suivant : `[a-zA-Z+/]`
+Le principe est de récupérer le sha1 de la seed (en y ajoutant un salt fixe pour éviter l'utilisation de hashtables), puis de l'encoder en base 64. Cette base utilise le charset suivant : `[a-zA-Z0-9+/]`. Vous avez donc au final un mot de passe pseudo-aléatoire avec majuscules, minuscules et chiffres. 
 
-
-## Liens :
-[L'opérateur modulo - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#.25_.28Modulus.29)   
+Attention toutefois !  
+L'intérêt de ce genre de fonctions est de pouvoir générer des mots de passes que vous n'avez pas à retenir. Le charset étant assez faible, les mots de passes seront plutôt vulnérables à des attaques par brute-force. Il est donc fortement déconseiller de générer un mot de passe avec cette méthode pour des usages multiples. La vraie force de ce système, c'est de pouvoir générer de multiples mots de passe **à usage unique**. Si l'un des mots de passe est corrompu, il suffit d'en générer un nouveau, les autres ne sont pas impactés. En revanche, si la méthode de calcul est découverte, c'est l'intégralité des mots de passes qui sont corrompus. À vous de voir ce dont vous avez besoin, et ce que vous pouvez faire.
