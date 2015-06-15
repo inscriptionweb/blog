@@ -41,7 +41,7 @@ layout: listing
 
             {% if post.update %}
 
-            {% assign updateMonthNum = update.date | date: "%-m" %}
+            {% assign updateMonthNum = post.update | date: "%-m" %}
             {% assign updateMonth = '' %}
             {% case updateMonthNum %}
               {% when '1' %}{% assign updateMonth = 'Janvier' %}
