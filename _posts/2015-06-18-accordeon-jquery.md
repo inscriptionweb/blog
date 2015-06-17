@@ -1,21 +1,18 @@
 ---
 layout: post
-title:  "Créer son propre accordéon de contenu avec jQuery"
-date:   2015-01-01
+title:  "Un accordéon de contenu avec jQuery"
+date:   2015-06-18
 tags:
 - js 
 description: >
   Atelier création ! Aujourd'hui je vous présente un moyen de créer un accordéon de contenu à la main.
 --- 
 
-## Réinventer la roue ?
+## Petite note
 
-Quand il s'agit de mettre en place un slider, ou un accordéon de contenu, je vois généralement les gens se diriger vers Google pour trouver un plugin tout prêt. Alors les plugins c'est cool certes, mais ça n'a pas que des avantages. La plupart du temps, le plugin répondra à 80% de vos besoins, et vous devrez bricoler les 20% restants vous-même.   
-D'un autre côté, vous utiliserez probablement 20% du plugin, et les 80% de lignes de code restantes resterons là, toutes tristes de rester dans leur coin...
+Cet article à été écrit il y a déjà plusieurs années, mais je ne l'avais pas encore publié. Son but originel était de présenter plusieurs fonctions jQuery. Mais plus les jours passent, plus il devient obsolète et moins il représente ma façon de travailler en JS. Du coup le voilà tel quel, je pense qu'il peut encore être utile à ceux qui découvrent jQuery. 
 
-Je ne crache pas sur les plugins jQuery, on en trouve d'excellents, paramétrables à souhaits et qui font gagner du temps. Encore faut-il les connaître ! Entre le temps passé à chercher le plugin, à l’appréhender si c'est votre première utilisation, à lire la documentation à propos d'une feature avancée dont vous avez besoin, et enfin à styler la chose pour que ce soit adapté à votre site... N'auriez-vous pas mieux fait de tout coder à la main ?
-
-**Messieurs-dames, réinventons la roue !**
+Sans cracher sur les plugins jQuery (on en trouve d'excellents), parfois le temps passé à chercher un plugin et à le maîtriser dépasse largement celui que vous auriez passé à développer ça vous-même. Prenons pour exemple un accordéon de contenu : il existe une myriade de plugins sur le net, mais le principe est au final tellement simple que vous pouvez le faire vous-même...
 
 ## La structure HTML
 
@@ -23,11 +20,11 @@ Faisons simple ici.
 Pour chaque élément de notre accordéon, nous aurons un titre, et du texte :
 
 	<ul class="accordion" data-speed="150">
-		<li class="active">
+		<li class="accordion-item active">
 			<h3 class="accordion-title">...</h3>
 			<div class="accordion-content">...</div>
 		</li>
-		<li>
+		<li class="accordion-item">
 			<h3 class="accordion-title">...</h3>
 			<div class="accordion-content">...</div>
 		</li>
@@ -40,40 +37,6 @@ Voici pour les utilisateurs d'Emmet la chaîne pour générer la structure d'exe
 ## Un peu de CSS
 
 On est dans le facultatif total, l'accordéon fonctionnera sans le CSS, mais c'est un peu plus beaucoup mieux avec.
-
-**SCSS**
-
-	$b_main:    #e74c3c;
-	$b_hover:   #c0392b;
-	$c_main:    #2c3e50;
-	$c_reverse: #ecf0f1;
-
-	.accordion {
-		padding: 0;
-		list-style: none;
-
-		.accordion-title {
-			display: block;
-			margin: 0;
-			padding: 0 7px;
-			line-height: 34px;
-			text-decoration: none;
-			cursor: pointer;
-			background: $b_main;  
-			color: $c_reverse;
-
-			&:hover {
-				background: $b_hover;
-			}
-		}
-		.accordion-content {
-			padding: 7px;
-			color: $c_main;
-			border: 1px solid $b_main;
-		}
-	}
-
-**CSS**
 
 	.accordion {
 		padding: 0;
@@ -106,12 +69,12 @@ On va faire simple, je vais balancer le code complet, en le commentant à chaque
 		// on stocke l'accordéon dans une variable locale
 		var accordion = $(this);
 		// on récupère la valeur data-speed si elle existe
-		var toggleSpeed = accordion.data('speed') || 100;
+		var toggleSpeed = accordion.attr('data-speed') || 100;
 
 		// fonction pour afficher un élément   
 		function open(item, speed) {
 			// on récupère tous les éléments, on enlève l'élément actif de ce résultat, et on les cache
-			accordion.find('li').not(item).removeClass('active')
+			accordion.find('.accordion-item').not(item).removeClass('active')
 				.find('.accordion-content').slideUp(speed);
 			// on affiche l'élément actif
 			item.addClass('active')
@@ -125,14 +88,14 @@ On va faire simple, je vais balancer le code complet, en le commentant à chaque
 		accordion.on('click', '.accordion-title', function(ev) {
 			ev.preventDefault();
 			// ...on lance l'affichage de l'élément, avec animation
-			open($(this).closest('li'), toggleSpeed);
+			open($(this).closest('.accordion-item'), toggleSpeed);
 		});
 	});
 
-On utilise quelques fonctions de base de jQuery dans ce script :
+Voici les quelques fonctions de base de jQuery dans ce script :
 
 * [each()](http://api.jquery.com/each/) : pour faire une même action sur plusieurs éléments
-* [data()](http://api.jquery.com/data/) : récupère un attribut de type data-foo=""
+* [attr()](http://api.jquery.com/attr/) : récupère l'attribut  d'un élément
 * [find()](http://api.jquery.com/find/) : recherche dans les éléments enfants
 * [not()](http://api.jquery.com/not/) : enlève des éléments d'un ensemble
 * [removeClass()](http://api.jquery.com/removeClass/) : supprime une classe d'un élément, si elle existe
@@ -144,10 +107,10 @@ On utilise quelques fonctions de base de jQuery dans ce script :
 
 ## Le résultat
 
-<center><iframe src="demos/accordeon-jquery/index.html" width="600" height="320"></iframe></center>
+<center><iframe src="{{ site.url }}/demos/accordeon-jquery/index.html" width="600" height="320"></iframe></center>
 
 ## Liens
 
 [**Démonstration**](http://blog.smarchal.com/demos/accordeon-de-contenu-jquery/index.html)   
 [Documentation jQuery](http://api.jquery.com/)   
-[Le composant Accordion, sur jQuery UI](http://jqueryui.com/accordion/)   
+[Le composant natif Accordion, sur jQuery UI](http://jqueryui.com/accordion/)   
