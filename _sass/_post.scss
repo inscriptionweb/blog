@@ -21,11 +21,14 @@ article {
         margin: ($section_padding / 2) 0;
     }
 
+    &.full-article {
+        min-height: 100vh;
+    }
     .article-preview {
-      display: none;
+        display: none;
     }
     .article-content {
-      display: block;
+        display: block;
     }
 
     aside {

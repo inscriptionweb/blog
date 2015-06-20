@@ -2,6 +2,8 @@
 
 section.articles {
 	width: 100%;
+	padding: $content_padding 0;
+	min-height: 100vh;
 	margin-left: auto;
 	margin-right: auto;
 
@@ -55,16 +57,18 @@ section.articles {
 }
 section.tags {
 	width: 100%;
-	padding: $tag_padding;
+	min-height: 100vh;
+	padding: $content_padding $tag_padding;
 	margin-left: auto;
 	margin-right: auto;
 	display: flex;
 	flex-wrap: wrap;
+	align-content: flex-start;
 	justify-content: space-between;
 	margin: 0 auto;
 
 	@include media($from: tablet) {
-		padding: 0;
+		padding: $content_padding 0;
 		width: map-get($content_width, tablet);
 	}
 	@include media($from: desktop) {

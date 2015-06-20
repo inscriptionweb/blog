@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 $defaultcolor       : #A56FC0;
+$defaultcolor_dark  : #44324d;
 $colors: (
   // No tag
   ""                : $defaultcolor,
@@ -49,6 +50,7 @@ $content_width      : (
   tablet:    500px,
   desktop:   800px
 );
+$body_padding       : 30px;
 $content_padding    : 50px;
 $section_padding    : 40px;
 $tag_padding        : 30px;

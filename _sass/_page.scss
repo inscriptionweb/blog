@@ -9,12 +9,39 @@ body {
     @extend %font-light;
     font-size: $font_size;
     overflow-x: hidden;
+}
 
-    @each $tag, $color in $colors {
-        &[data-color="#{$tag}"] {
-            color: $color;
-            background-color: darken($color, 50%);
+#canvas {
+    position: fixed;
+    top: $body_padding;
+    left: $body_padding;
+    pointer-events: none;
+
+    polygon {
+        display: none;
+
+        &.visible {
+            display: block;
         }
+    }
+    rect {
+        fill: $white;
+
+        @each $tag, $color in $colors {
+            body[data-color="#{$tag}"] & {
+                fill: $color;
+            }
+        }
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        box-shadow: inset 0 0 0 30px $white;
+        height: 100vh;
+        width: 100vw;
+        z-index: 80;
+        pointer-events: none;
     }
 }
 
@@ -80,15 +107,15 @@ h2, h3, h4 {
 
     a {
         position: absolute;
-        bottom: ($content_padding + $font_size) * 2;
+        top: -$section_padding;
         left: 0;
 
         &:before {
             position: absolute;
             color: $grey;
             left: $section_padding * -1;
+            top: $section_padding + $font_size;
             padding-right: map-get($content_width, desktop);
-            bottom: -($content_padding + $font_size) * 2;
             text-decoration: none;
             font-style: normal;
             opacity: 0;

@@ -1,38 +1,39 @@
 @charset "utf-8";
 
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 90;
-  color: $white;
-  background: #fff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  overflow: hidden;
-  border-bottom: 1px solid $grey;
-
-  [data-color="default"] & {
-    color: $defaultcolor;
-  }
+  padding: 0 100px;
+  color: $white;
 
   h1 {
     position: relative;
-    font-size: 50px;
+    font-size: 30px;
     padding: ($content_padding * 2) ($content_padding / 2);
     margin: 0 auto;
     min-height: $header_height;
     z-index: 2;
     transition: all $transition_header;
 
+    [data-color="default"] & {
+      color: $defaultcolor_dark;
+    }
+
     #logo {
       margin: 0 auto;
       transition: all $transition_header;
 
       @include media($until: tablet) {
-        margin: -80px;
+        margin: 0 -80px;
         transform: scale(0.7);
       }
+    }
+
+    span {
+      display: block;
     }
     @include media($from: tablet) {
       font-size: 60px;
@@ -44,82 +45,27 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    padding: $content_padding / 4;
-    color: $white;
+    padding: ($body_padding - $font_size) / 2;
+    margin: 0 $body_padding;
+    border-bottom: 1px solid $grey_light;
+    color: $grey_dark;
+    background: $white;
+    box-shadow: -$body_padding 0 $white, $body_padding 0 $white;
     text-decoration: none;
     text-align: center;
     font-size: 14px;
     line-height: $font_size;
-    width: 100%;
-    z-index: 2;
+    width: calc(100vw - #{$body_padding} * 2);
+    z-index: 90;
+    transition: all .4s;
 
-    [data-color="default"] & {
-      color: $defaultcolor;
-    }
-
-    &:before {
-      content: "◄";
-      opacity: 0.5;
-      transition: all .4s;
-    }
     span {
-      transition: all .4s;
       opacity: 0.5;
-      padding-left: 10px;
     }
-    @include media($from: tablet) {
-      text-align: left;
-
+    &:hover {
       span {
-        opacity: 0;
-        padding-left: 30px;
+        opacity: 1;
       }
-
-      &:hover,
-      &:focus {
-        span {
-          padding-left: 10px;
-          opacity: 1;
-        }
-        &:before {
-          opacity: 1;
-        }
-      }
-    }
-  }
-  .link-tags {
-    &:before {
-      content: "■";
-    }
-  }
-  #bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background: $white;
-
-    @each $tag, $color in $colors {
-        body[data-color="#{$tag}"] & {
-            background: radial-gradient(ellipse at center, $color 0%, darken($color, 50%) 100%);
-        }
-    }
-
-  }
-
-  &.sticky {
-    h1 {
-      font-size: $font_size;
-      min-height: $font_size;
-      padding: $content_padding 0 ($content_padding / 2);
-
-      @include media($from: tablet) {
-        padding: ($content_padding / 2) 0;
-      }
-    }
-    #logo {
-      margin: -50px;
-      transform: scale(0.5);
     }
   }
 }
