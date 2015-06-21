@@ -1,0 +1,102 @@
+---
+layout: post
+title:  "Faker"
+date:   2015-01-01
+tags:
+- php
+description: >
+  Présentation de Faker, une librairie PHP qui génère des données pour vous, ce qui est très utile pour avoir des données de test rapidement dans vos applications web.
+--- 
+
+## Introduction
+
+Vous pouvez installer Faker via Composer, ou à la main. Une fois installé, il suffit d'inclure l'autoloader dans votre code, et d'initialiser Faker :
+
+    require_once '/libs/Faker/src/autoload.php';
+    $faker = Faker\Factory::create();
+    echo $faker->text;
+
+Faker met à votre disposition de nombreuse formateurs (j'ai utilisé ci-dessus le formateur `text`), qui généreront à chaque appel un résultat différent. À vous d'utiliser ces données comme il vous plaît : du simple affichage au stockage dans une base de données, tout est possible.
+
+## Les principaux formateurs
+
+Je vous présente ci-dessous quelques formateurs très pratiques, histoire que vous ayez un aperçu de l'étendue de la librairie et de son utilité.
+
+Pour générer des nombres aléatoires :
+
+    echo $faker->randomNumber(5);
+    echo $faker->randomFloat(0, 100);
+    echo $faker->numberBetween(0, 100);
+
+Pour générer du texte :
+
+    echo $faker->word();
+    echo $faker->words(5);
+    echo $faker->sentence();
+    echo $faker->paragraphs(3);
+    echo $faker->text();
+
+Pour générer des données personnelles :
+
+    echo $faker->title('male');
+    echo $faker->name('female');
+    echo $faker->firstName();
+    echo $faker->lastName();
+
+Pour générer des adresses :
+
+    echo $faker->state();
+    echo $faker->city();
+    echo $faker->streetAddress();
+    echo $faker->postcode();
+    echo $faker->latitude();
+    echo $faker->longitude();
+
+Pour générer des dates :
+
+    echo $faker->dateTime();
+    echo $faker->date();
+    echo $faker->time('H:i');
+    echo $faker->month();
+    echo $faker->dayOfWeek();
+
+Pour générer des données informatiques  :
+
+    echo $faker->email();
+    echo $faker->userName();
+    echo $faker->password();
+    echo $faker->url();
+    echo $faker->ipv4();
+
+Pour générer des couleurs  :
+
+    echo $faker->hexcolor();
+    echo $faker->rbgcolor();
+    echo $faker->safeColorName();
+
+Pour générer des fichiers  :
+
+    echo $faker->file('/src/', '/dest/');
+    echo $faker->image('/dest/', 800, 600);
+    echo $faker->imageUrl(800, 600);
+
+Il en existe encore bien d'autres, et nombreux sont ceux qui vous permettent via des paramètres de personnaliser le résultat. Tout ceci peut énormément aider à générer un set de données semi-aléatoire, tout en contrôlant dans une certaine mesure les propriétés de ces données.
+
+## Générer des données françaises
+
+La gestion de données aléatoire, c'est bien. Mais ça perd tout son sens si ces données n'ont pas le format que vous attendez. Prenons le cas du code postal : Faker génère par défaut des données américaines, ce qui veut dire que vous aurez des codes postaux américains. Ceux-ci n'ont aucun intérêt pour vous, pire même, ils pourraient très bien ne pas être acceptés par un quelconque filtre mis en place, ou par les contraintes de votre base de données.
+
+Rassurez-vous, Faker à déjà prévu le coup et permet d'utiliser un provider différent. Le provider (ou fournisseur) fournit les données utilisées par Faker pour la génération. Ce ne sont ni plus ni moins que des listes prédéfinies de noms, d'adresses, d'emails... De nombreux providers sont disponibles, pour chaque langue. Si vous voulez utiliser le provider `fr_FR`, initialisez Faker avec cette locale :
+
+    $faker = Faker\Factory::create('fr_FR');
+
+## Générer les même données
+
+Dans le cas ou vous auriez besoin de toujours générer les mêmes données, il est possible de fournir une seed à votre instance Faker. Peut importe le nombre fourni, tant qu'il ne change pas :
+
+    $faker = Faker\Factory::create();
+    $faker->seed(4853);
+
+## Liens
+
+[Faker sur GitHub](https://github.com/fzaninotto/Faker)  
