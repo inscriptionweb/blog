@@ -71,8 +71,8 @@ function trianglify() {
   for(var y = 0; y < numPointsY; y++) {
       for(var x = 0; x < numPointsX; x++) {
           points.push([
-              unitWidth * x + ((x == 0 || x == numPointsX) ? 0 : (Math.random() * unitWidth - unitWidth / 2) / 1.4),
-              unitHeight * y + ((y == 0 || y == numPointsY) ? 0 : (Math.random() * unitHeight - unitHeight / 2) / 1.4)
+              unitWidth * x + ((x == 0 || x == numPointsX - 1) ? 0 : (Math.random() * unitWidth - unitWidth / 2) / 1.4),
+              unitHeight * y + ((y == 0 || y == numPointsY - 1) ? 0 : (Math.random() * unitHeight - unitHeight / 2) / 1.4)
           ]);
       }
   }
