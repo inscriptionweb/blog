@@ -18,8 +18,9 @@ Element.prototype.setAttributes = function(attrs) {
 }
 
 // Trianglified header
-var points = [];
-var polygons = [];
+var points = [],
+    polygons = [],
+    oldWidth = 0;
 function trianglifyLimit() {
     limit = window.innerHeight - window.pageYOffset;
     polygons.forEach(function(polygon, index) {
@@ -31,6 +32,9 @@ function trianglifyLimit() {
     });
 }
 function trianglify() {
+  if(oldWidth == window.innerWidth) {
+    return;
+  }
   var svg = document.querySelector('#canvas'),
       svgBackground = document.querySelector('#canvas-background'),
       svgPolygons = document.querySelector('#canvas-polygons'),
@@ -38,6 +42,7 @@ function trianglify() {
 
   points = [];
   polygons = [];
+  oldWidth = window.innerWidth;
   while (svgPolygons.firstChild) {
       svgPolygons.removeChild(svgPolygons.firstChild);
   }
