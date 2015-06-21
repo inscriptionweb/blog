@@ -114,7 +114,7 @@ h2, h3, h4 {
             position: absolute;
             color: $grey;
             left: $section_padding * -1;
-            top: $section_padding + $font_size;
+            top: $section_padding;
             padding-right: map-get($content_width, desktop);
             text-decoration: none;
             font-style: normal;
@@ -132,6 +132,9 @@ h2, h3, h4 {
             opacity: 1;
         }
     }
+}
+h2 a:before {
+    top: $section_padding + $font_size;
 }
 p {
     margin: ($section_padding / 2) 0;
