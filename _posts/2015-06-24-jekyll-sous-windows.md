@@ -64,7 +64,7 @@ Voici le schéma d'utilisation standard de Jekyll :
     $ git remote add origin git@github.com:username/blog.git
     $ jekyll serve
 
-Ici, on crée d'abord un nouveau blog avec Jekyll (`blog` est uniquement le nom du dossier, choisissez ce que vous voulez). On se rend ensuite dans le dossier créé, et on lance un serveur local à l'aide de la commande `jekyll serve`. Grâce à cette dernière commande, nous allons pouvoir accéder à l'URL `http://localhost:4000` et voir notre blog. Chaque modification sera détecté, et le blog automatiquement re-généré. 
+Ici, on crée d'abord un nouveau blog avec Jekyll (`blog` est uniquement le nom du dossier, choisissez ce que vous voulez). On se rend ensuite dans le dossier créé, et on lance un serveur local à l'aide de la commande `jekyll serve`. Grâce à cette dernière commande, nous allons pouvoir accéder à l'URL `http://localhost:4000` et voir notre blog. Chaque modification sera détectée, et le blog automatiquement re-généré. 
 
 À partir de là, vous travaillez comme bon vous semble : vous faites vos templates, vous créez du contenu, etc. 
 
@@ -78,7 +78,7 @@ Rien de plus !
 
 ## Jekyll et Windows : la croisade du XXIe siècle
 
-Bon. Maintenant que je vous ai très rapidement présenté Jekyll, il est temps d'attaquer le vrai but de cet article. La documentation de Jekyll est suffisamment bien faite, et il y a assez de ressources sur le net pour que vous compreniez aisément comment utiliser Jekyll. En revanche, les articles qui explique comment le faire fonctionner sous Windows sont rares. Il en existe toutefois un qui mérite d'être cité, et qui m'a plutôt aidé dans cette croisade : [Run Jekyll on Windows](http://jekyll-windows.juthilo.com/), écrit par [@juthilo](https://twitter.com/juthilo).
+Bon. Maintenant que je vous ai très rapidement présenté Jekyll, il est temps d'attaquer le vrai but de cet article. La documentation de Jekyll est suffisamment bien faite, et il y a assez de ressources sur le net pour que vous compreniez aisément comment utiliser Jekyll. En revanche, les articles qui expliquent comment le faire fonctionner sous Windows sont rares. Il en existe toutefois un qui mérite d'être cité, et qui m'a plutôt aidé dans cette croisade : [Run Jekyll on Windows](http://jekyll-windows.juthilo.com/), écrit par [@juthilo](https://twitter.com/juthilo).
 
 Nous allons donc commencer, de zéro, en détaillant tous les prérequis.
 
@@ -123,10 +123,10 @@ Pour les utilisateurs de [Cygwin](http://blog.smarchal.com/cygwin/) et de Ruby <
 > Unable to download data from https://rubygems.org/ - SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (
 https://api.rubygems.org/latest_specs.4.8.gz)
 
-Ceci est dû à la transition actuelle entre l'utilisation de SHA1 et SH2 pour les certificats SSL. Si vous avez ce problème, voici la marche à suivre (des informations détaillées sont disponibles [ici](https://gist.github.com/luislavena/f064211759ee0f806c88) pour ceux qui voudraient en savoir un peu plus) :
+Ceci est dû à la transition actuelle entre l'utilisation de SHA1 et SHA2 pour les certificats SSL. Si vous avez ce problème, voici la marche à suivre (des informations détaillées sont disponibles [ici](https://gist.github.com/luislavena/f064211759ee0f806c88) pour ceux qui voudraient en savoir un peu plus) :
 
 - [Télécharger ce certificat](https://raw.githubusercontent.com/rubygems/rubygems/master/lib/rubygems/ssl_certs/AddTrustExternalCARoot-2048.pem)
-- Copiez le dans le dossier `/lib/ruby/{version}/rubygems/ssl_certs` de votre installation
+- Copiez-le dans le dossier `/lib/ruby/{version}/rubygems/ssl_certs` de votre installation
 - Relancez l'installation de Jekyll
 
 Vous êtes à présent (presque) prêt à utiliser Jekyll !
@@ -145,7 +145,7 @@ Si c'est le cas, je vous redirige sur [le site officiel de Python](https://www.p
 
 Si vous préférez utiliser un autre moteur de coloration syntaxique, vous pouvez. [Rouge](https://rubygems.org/gems/rouge/versions/1.9.0) par exemple, qui s'installe facilement via la commande suivante :
 
-    gem install rouge
+    $ gem install rouge
 
 Quel que soit votre choix, veillez à bien modifier le fichier `_config.xml` pour spécifier quel moteur vous utilisez :
 
@@ -156,7 +156,7 @@ Quel que soit votre choix, veillez à bien modifier le fichier `_config.xml` pou
 
 Enfin et pour finir, vous aurez besoin d'un dernier outil : [Windows Directory Monitor](https://rubygems.org/gems/wdm/versions/0.1.0). Cette gem permet de détecter des changements dans un dossier, elle est donc essentielle pour utiliser Jekyll. Vous pouvez là aussi l'installer via un simple :
 
-    gem install wdm
+    $ gem install wdm
 
 ## Utilisation de Jekyll
 
@@ -164,19 +164,19 @@ Vous êtes enfin prêt !
 
 Ce fût dur, mais nous y sommes. Voici à présent et pour finir, une rapide présentation des différentes commandes que vous aurez à utiliser avec Jekyll. Je n'allais quand même pas vous laisser comme ça, sans rien, après tout ce qu'on a enduré ensemble, non ?
 
-    jekyll new .
+    $ jekyll new .
 
 Celle-ci, nous en avons déjà parlé. C'est la commande pour créer un nouveau site/blog Jekyll. L'argument est le nom du dossier dans lequel l'instance sera créée, le dossier courant pour notre exemple.
 
-    jekyll build
+    $ jekyll build
 
 Ici, nous lançons un build du site, et rien de plus. Les fichiers sont générés, mais aucun serveur n'est lancé. Vous vous servirez de cette commande dans le cas ou vous ne passez pas par GitHub pour héberger votre site, par exemple.
 
-    jekyll serve
+    $ jekyll serve
 
 Déjà évoquée, cette commande permet de lancer un serveur sur le port 4000 de l'hôte local, et de détecter tout changement de fichier source afin de re-générer le site. C'est celle que vous devriez utiliser le plus en local.
 
-    jekyll serve --drafts
+    $ jekyll serve --drafts
 
 Dérivée de la précédente, le serveur tiendra ici compte des drafts (les articles en cours de rédaction). Ces articles qui se trouvent dans le dossier `_drafts/` ne sont habituellement pas pris en compte. Préciser l'option `--drafts` vous permet de vérifier en local l'affichage correct d'un futur article, sans avoir besoin de de publier. Notez que GitHub n'utilise évidemment pas cette option. Vous pourrez trouver plus d'informations sur les drafts [dans la documentation de Jekyll](http://jekyllrb.com/docs/drafts/)
 
