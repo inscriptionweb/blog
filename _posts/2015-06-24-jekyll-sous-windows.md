@@ -135,18 +135,18 @@ Vous êtes à présent (presque) prêt à utiliser Jekyll !
 
 Jekyll est fourni avec un moteur de coloration syntaxique : [Pygments](http://pygments.org/). Sur un environnement Unix, vous n'aurez aucun souci à le faire fonctionner. Ce n'est pas le cas pour Windows. Pygments est écrit en Python, et ce dernier n'est pas installé par défaut sur Windows.
 
-**Attention !**  
-Vous n'avez pas forcément besoin d'installer Python. Ce sera le cas uniquement si :
+Cela dit, vous n'avez pas forcément besoin d'installer Python. Ce sera le cas uniquement si :
 
 - vous avez besoin de coloration syntaxique
 - vous voulez utiliser Pygments
 
 Si c'est le cas, je vous redirige sur [le site officiel de Python](https://www.python.org/downloads/), pour télécharger la dernière version pour Windows. Même chose que pour Ruby, pensez bien à sélectionner `Add python.exe to Path` lors de l'installation. Ensuite, vous pourrez au choix installer Pygments manuellement, ou à l'aide de [pip](https://pip.pypa.io/en/latest/installing.html) (un gestionnaire de packages Python).
 
-Si vous préférez utiliser un autre moteur de coloration syntaxique, vous pouvez. [Rouge](https://rubygems.org/gems/rouge/versions/1.9.0) par exemple, qui s'installe facilement via la commande suivante :
+Si vous préférez utiliser un autre moteur de coloration syntaxique, vous pouvez. [Rouge](https://rubygems.org/gems/rouge/versions/1.9.0) par exemple, s'installe facilement via la commande suivante :
 
     $ gem install rouge
 
+**Attention toutefois : les GitHub Pages ne supportent pas la gem Rouge** (j'y reviendrai dans un prochain article).  
 Quel que soit votre choix, veillez à bien modifier le fichier `_config.xml` pour spécifier quel moteur vous utilisez :
 
     highlighter: pygments
