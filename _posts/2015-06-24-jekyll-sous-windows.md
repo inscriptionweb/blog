@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Guide d'installation de Jekyll sous Windows"
-date:   2015-01-01
+date:   2015-06-24
 tags:
 - ruby
 - html
