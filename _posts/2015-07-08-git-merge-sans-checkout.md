@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Faire un git merge sans checkout"
-date:   2015-01-01
+date:   2015-07-08
 tags:
 - git
 description: > 
