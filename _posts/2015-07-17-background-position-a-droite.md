@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Positionner un background par la droite en CSS"
-date:   2015-01-01
+date:   2015-07-17
 tags:
 - css 
 description: >
