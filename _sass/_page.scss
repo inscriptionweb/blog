@@ -162,6 +162,7 @@ p, li {
     }
 }
 code {
+    @extend %font-code;
     display: inline;
     padding: 0 4px;
     background: $grey_light;
@@ -171,6 +172,7 @@ code {
     }
 }
 pre {
+    @extend %font-code;
     display: block;
     position: relative;
     margin: $section_padding 0;
