@@ -162,6 +162,8 @@ p, li {
     }
 }
 code {
+    @extend %font-code;
+    font-size: 0.8em;
     display: inline;
     padding: 0 4px;
     background: $grey_light;
@@ -171,6 +173,7 @@ code {
     }
 }
 pre {
+    @extend %font-code;
     display: block;
     position: relative;
     margin: $section_padding 0;
@@ -278,4 +281,7 @@ kbd {
 }
 strong {
     font-weight: bold;
+}
+em {
+    font-style: italic;
 }
