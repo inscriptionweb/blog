@@ -129,7 +129,9 @@ body > footer {
 
             a {
                 @each $tag, $color in $colors {
-                    color: $color;
+                    [data-color="#{$tag}"] & {
+                        color: $color;
+                    }
                 }
             }
         }
