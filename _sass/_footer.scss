@@ -117,6 +117,7 @@ body > footer {
 
         h2 {
             color: $grey_dark;
+            padding-top: ($section_padding / 2);
             margin-bottom: $section_padding;
 
             &:before {
@@ -125,6 +126,12 @@ body > footer {
         }
         #disqus_thread {
             color: $grey_dark;
+
+            a {
+                @each $tag, $color in $colors {
+                    color: $color;
+                }
+            }
         }
     }
 }
