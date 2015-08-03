@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "JS et debounce"
-date:   2015-01-01
+date:   2015-08-03
 tags:
 - js 
 description: >
