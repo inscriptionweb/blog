@@ -132,7 +132,7 @@ Si on reprend notre tâche `css`, nous avons trois plugins à installer et à ch
     var sass         = require('gulp-sass');
     var autoprefixer = require('gulp-autoprefixer');
     var minify       = require('gulp-minify-css');
-    var uglify       = require('gulp-uglify-js');
+    var uglify       = require('gulp-uglify');
     var concat       = require('gulp-concat');
 
 Rien de plus pour les plugins !  
@@ -213,7 +213,7 @@ Ensuite, l'installation de gulp et des modules :
     npm install --global gulp-sass
     npm install --global gulp-autoprefixer
     npm install --global gulp-minify-css
-    npm install --global gulp-uglify-js
+    npm install --global gulp-uglify
     npm install --global gulp-concat
 
 Puis enfin le fichier de configuration `gulpfile.js` au complet :
@@ -223,7 +223,7 @@ Puis enfin le fichier de configuration `gulpfile.js` au complet :
     var sass         = require('gulp-sass');
     var autoprefixer = require('gulp-autoprefixer');
     var minify       = require('gulp-minify-css');
-    var uglify       = require('gulp-uglify-js');
+    var uglify       = require('gulp-uglify');
     var concat       = require('gulp-concat');
 
     var source       = './assets/';
