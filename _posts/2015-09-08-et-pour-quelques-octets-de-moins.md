@@ -176,10 +176,10 @@ Le 4e paramètre (`large-arc-flag`) définit s'il faut utiliser l'arc le plus gr
 Le 5e paramètre (`sweep-flag`) définit s'il faut utiliser l'arc en sens horaire (1) ou anti-horaire (0).  
 Voici ce que donne la combinaison de ces deux paramètres avec les exemples ci-dessus :
 
-|                    | large-arc-flag = 0 | large-arc-flag = 1 |
-|--------------------|:------------------:|:------------------:|
-| **sweep-flag = 0** | jaune              | bleu               |
-| **sweep-flag = 1** | vert               | rouge              |
+- `large-arc-flag="0" sweep-flag="0"` : jaune
+- `large-arc-flag="0" sweep-flag="1"` : vert
+- `large-arc-flag="1" sweep-flag="0"` : bleu
+- `large-arc-flag="1" sweep-flag="1"` : rouge
 
 Cette combinaison de deux paramètres permet de pouvoir choisir l'arc a dessiner dans n'importe quel cas. Voici les différents arc utilisée pour les lettres :
 
