@@ -13,7 +13,7 @@ description: >
 
 ## 291 octets
 
-<center><svg fill=none stroke-width=8><circle cx=142 cy=47 r=17 stroke=#fbbc05 /><path d=M220,4v63 stroke=#34a853 /><path d=M35,35h30A30,30,0,1,1,56,14m150,33a17,17,0,1,0,0,.1m0,-21v41a17,17,0,0,1,-33,6 stroke=#4285f4 /><path d=M110,47a17,17,0,1,0,0,.1M234,52l32,-13a17,17,0,1,0,0,17 stroke=#ea4335></center>
+<center><svg fill=none stroke-width=8><circle cx=142 cy=47 r=17 stroke=#fbbc05 /><path d=M220,4v63 stroke=#34a853 /><path d=M35,35h30A30,30,0,1,1,56,14m150,33a17,17,0,1,0,0,.1m0,-21v41a17,17,0,0,1,-33,6 stroke=#4285f4 /><path d=M110,47a17,17,0,1,0,0,.1M234,52l32,-13a17,17,0,1,0,0,17 stroke=#ea4335/></svg></center>
 
 C'est là le résultat le plus abouti que j'ai pu produire pour le moment :
 
@@ -240,7 +240,7 @@ Enfin, j'ai découvert au fil de mes recherches quelques raccourcis :
 
 Et tout ceci pour un résultat de 291 octets !
 
-<center><svg fill=none stroke-width=8><circle cx=142 cy=47 r=17 stroke=#fbbc05 /><path d=M220,4v63 stroke=#34a853 /><path d=M35,35h30A30,30,0,1,1,56,14m150,33a17,17,0,1,0,0,.1m0,-21v41a17,17,0,0,1,-33,6 stroke=#4285f4 /><path d=M110,47a17,17,0,1,0,0,.1M234,52l32,-13a17,17,0,1,0,0,17 stroke=#ea4335></center>
+<center><svg fill=none stroke-width=8><circle cx=142 cy=47 r=17 stroke=#fbbc05 /><path d=M220,4v63 stroke=#34a853 /><path d=M35,35h30A30,30,0,1,1,56,14m150,33a17,17,0,1,0,0,.1m0,-21v41a17,17,0,0,1,-33,6 stroke=#4285f4 /><path d=M110,47a17,17,0,1,0,0,.1M234,52l32,-13a17,17,0,1,0,0,17 stroke=#ea4335/></svg></center>
 
 
 ## Liens
