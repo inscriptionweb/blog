@@ -44,7 +44,7 @@ Le premier élément créé dans ce SVG est un cercle. Cet élément est un des 
 
 Dans mon exemple, j'utilise un cercle pour le second "o" de Google (le second est géré autrement pour un gain de place) :
 
-<center><svg fill="none" stroke-width="8" stroke="#ccc">
+<center><svg fill="none" stroke-width="8" stroke="#ccc" height="90">
     <circle cx="142" cy="47" r="17" stroke="#fbbc05" />
     <path d="M220,4 v63" />
     <path d="M35,35 h30 A30,30,0,1,1,56,14 m150,33 a17,17,0,1,0,0,.1 m0,-21 v41 a17,17,0,0,1,-33,6" />
@@ -95,7 +95,7 @@ Vous savez maintenant vous déplacer dans un SVG, mais il faut utiliser d'autres
 
 Voici la ligne que j'ai tracée pour la barres du "e" de Google :
 
-<center><svg fill="none" stroke-width="8" stroke="#ccc">
+<center><svg fill="none" stroke-width="8" stroke="#ccc" height="90">
     <circle cx="142" cy="47" r="17" />
     <path d="M220,4 v63" />
     <path d="M35,35 h30 A30,30,0,1,1,56,14 m150,33 a17,17,0,1,0,0,.1 m0,-21 v41 a17,17,0,0,1,-33,6" />
@@ -103,8 +103,8 @@ Voici la ligne que j'ai tracée pour la barres du "e" de Google :
     <path d="M234,52 l32,-13" stroke="#ea4335" />
 </svg></center>
 
-    <svg fill="none" stroke-width="8" stroke="#ea4335">
-      <path d="M234,52 l32,-13" />
+    <svg fill="none" stroke-width="8">
+      <path d="M234,52 l32,-13" stroke="#ea4335" />
     </svg>
 
 Il existe aussi des raccourcis pour les lignes horizontales et verticales :
@@ -116,7 +116,7 @@ Il existe aussi des raccourcis pour les lignes horizontales et verticales :
 
 Ce sont ces commandes `h` et `v` que j'ai utilisées pour dessiner les deux "g" et le "l" de Google :
 
-<center><svg fill="none" stroke-width="8" stroke="#ccc">
+<center><svg fill="none" stroke-width="8" stroke="#ccc" height="90">
     <circle cx="142" cy="47" r="17" />
     <path d="M220,4 v63" />
     <path d="M35,35 h30 A30,30,0,1,1,56,14 m150,33 a17,17,0,1,0,0,.1 m0,-21 v41 a17,17,0,0,1,-33,6" />
@@ -126,7 +126,7 @@ Ce sont ces commandes `h` et `v` que j'ai utilisées pour dessiner les deux "g" 
     <path d="M206,26 v41" stroke="#4285f4" />
 </svg></center>
 
-    <svg fill="none" stroke-width="8" stroke="#ea4335">
+    <svg fill="none" stroke-width="8">
       <path d="M220,4 v63" stroke="#34a853" />
       <path d="M35,35 h30" stroke="#4285f4" />
       <path d="M206,26 v41" stroke="#4285f4" />
@@ -158,7 +158,7 @@ C'est cette seconde solution qui a été choisie par le W3C. Elle apporte le gro
 
 Enfin, les deux paramètres manquants permettent de déterminer quelle ellipse sera utilisée, et quelle portion sera dessinée. Nous avons en effet deux points, et une même ellipse peut être placée à deux endroits différents sur ces deux points. De la même manière, une ellipse passant par deux points laisse deux arcs disponibles : un petit et un grand (ou deux arcs de même taille dans le cas particulier où les points sont opposés). Voici un petit schéma pour comprendre le problème, sur lequel vous pouvez voir deux ellipses identiques, passant par les même deux points de départ et d'arrivée. Les 4 arcs possibles sont affichés dans des couleurs différentes. 
 
-<center> <svg stroke-width="8" fill="none" stroke="black">
+<center> <svg stroke-width="8" fill="none" stroke="black" height="140">
   <path d="M70,50 A50,25,30,0,0,100,100" stroke="#fbbc05"/>
   <path d="M70,50 A50,25,30,0,1,100,100" stroke="#34a853"/>
   <path d="M70,50 A50,25,30,1,0,100,100" stroke="#4285f4"/>
@@ -178,7 +178,7 @@ Voici ce que donne la combinaison de ces deux paramètres avec les exemples ci-d
 
 Cette combinaison de deux paramètres permet de pouvoir choisir l'arc a dessiner dans n'importe quel cas. Voici les différents arc utilisée pour les lettres :
 
-<center><svg fill="none" stroke-width="8" stroke="#ccc">
+<center><svg fill="none" stroke-width="8" stroke="#ccc" height="90">
     <circle cx="142" cy="47" r="17" />
     <path d="M220,4 v63" />
     <path d="M35,35 h30 A30,30,0,1,1,56,14 m150,33 a17,17,0,1,0,0,.1 m0,-21 v41 a17,17,0,0,1,-33,6" />
@@ -202,7 +202,7 @@ Il reste enfin une commande, que je n'ai pas utilisée : `z`. Cette commande ne 
 
 C'est une commande utile pour terminer des formes anguleuses. Elle aurait aussi pu, par exemple, être utilisée pour finir le "e" de Google :
 
-<center><svg fill="none" stroke-width="8" stroke="#ccc">
+<center><svg fill="none" stroke-width="8" stroke="#ccc" height="90">
     <circle cx="93" cy="47" r="17" />
     <circle cx="142" cy="47" r="17" />
     <path d="M35,35 h30 A30,30,0,1,1,56,14 m145,21 a17,17,0,1,0,.1,.1 m5,-9 v41 a17,17,0,0,1,-33,6" />
@@ -212,8 +212,8 @@ C'est une commande utile pour terminer des formes anguleuses. Elle aurait aussi 
     <path d="M266,56 A17,17,0,0,1,234,52 m0,0 A17,17,0,0,1,266,40 z" stroke="#ea4335" />
 </svg></center>
 
-    <svg fill="none" stroke-width="8" stroke="#ea4335">
-      <path d="M266,56 A17,17,0,0,1,234,52 m0,0 A17,17,0,0,1,266,40 z" />
+    <svg fill="none" stroke-width="8">
+      <path d="M266,56 A17,17,0,0,1,234,52 m0,0 A17,17,0,0,1,266,40 z" stroke="#ea4335" />
     </svg>
 
 ## La minification
