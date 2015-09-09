@@ -47,7 +47,7 @@ Le premier élément créé dans ce SVG est un cercle. Cet élément est un des 
 - `cy`, l'ordonnée de son centre 
 - `r`, son rayon
 
-Dans mon exemple, j'utilise un cercle pour le second "o" de Google (le second est géré autrement pour un gain de place) :
+Dans mon exemple, j'utilise un cercle pour le second "o" de Google (le premier "o" est géré d'une autre manière pour un gain de place) :
 
 <center><svg fill="none" stroke-width="8" stroke="#ccc" height="90">
     <circle cx="142" cy="47" r="17" stroke="#fbbc05" />
@@ -87,7 +87,7 @@ Ces commandes seront placées avec leurs arguments dans l'attribut `d` de l'él�
 Lorsque vous créez un élément `<path>`, vous utilisez un pointeur virtuel qui servira de repère pour tous les éléments que vous déciderez d'afficher. Vous avez la possibilité de déplacer ce pointeur de deux manière différentes :
 
 - `M10,20` déplacera le curseur de manière absolue : aux coordonnées `{10,20}`
-- `m10,20` déplacera le curseur de manière relative : de 10 pixels vers la gauche et 20 pixel vers le bas par rapport à sa position actuelle
+- `m10,20` déplacera le curseur de manière relative : de 10 pixels vers la droite et 20 pixel vers le bas par rapport à sa position actuelle
 
 La plupart des commandes que nous allons voir ont deux versions : une première en majuscules, qui prendra des coordonnées absolues en paramètres, et une seconde en minuscules pour des coordonnées relatives.
 
@@ -115,7 +115,7 @@ Voici la ligne que j'ai tracée pour la barres du "e" de Google :
 Il existe aussi des raccourcis pour les lignes horizontales et verticales :
 
 - `H15` pour tracer une ligne horizontale jusqu'à l'abscisse 15
-- `h15` pour tracer une ligne horizontale de 15 pixels vers la gauche
+- `h15` pour tracer une ligne horizontale de 15 pixels vers la droite
 - `V15` pour tracer une ligne verticale jusqu'à l'ordonnée 15
 - `v-5` pour tracer une ligne verticale de 5 pixels vers le haut
 
