@@ -9,11 +9,6 @@ url: http://blog.smarchal.com
 twitter_username: zessx
 github_username:  zessx
 
-# Gems
-gems:
-  - wdm
-  - octopress-autoprefixer
-
 # Build settings
 safe: false
 markdown: kramdown

@@ -9,8 +9,14 @@ body > footer {
         width: 100%;
         margin: 0 auto;
         padding: 0 $content_padding;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
         position: relative;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
         justify-content: center;
         line-height: 120px;
         color: $white;
@@ -20,6 +26,9 @@ body > footer {
         }
         @include media($from: desktop) {
             padding: 0;
+            -webkit-box-pack: end;
+            -webkit-justify-content: flex-end;
+            -ms-flex-pack: end;
             justify-content: flex-end;
             width: map-get($content_width, desktop);
         }
@@ -31,6 +40,8 @@ body > footer {
             height: 100%;
             top: 0;
             left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
             transform: translateX(-50%);
             background: $grey_dark;
             z-index: 1;
@@ -59,6 +70,7 @@ body > footer {
             padding: 0 30px;
             text-align: center;
             position: relative;
+            -webkit-transition: all .4s;
             transition: all .4s;
             z-index: 2;
 
@@ -70,6 +82,7 @@ body > footer {
                 left: -20px;
                 position: absolute;
                 top: 0;
+                -webkit-transition: all .4s;
                 transition: all .4s;
             }
             &:after {
@@ -81,6 +94,7 @@ body > footer {
                 right: -20px;
                 top: 0;
                 width: 0;
+                -webkit-transition: all .4s;
                 transition: all .4s;
             }
             &:hover,

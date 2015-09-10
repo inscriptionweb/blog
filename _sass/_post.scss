@@ -5,6 +5,7 @@ article {
     margin: 0 auto;
     padding: $content_padding;
     line-height: 1.5;
+    -webkit-transition: margin-top $transition_header;
     transition: margin-top $transition_header;
 
     @include media($from: tablet) {
