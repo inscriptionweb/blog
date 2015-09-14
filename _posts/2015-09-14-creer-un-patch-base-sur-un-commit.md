@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Créer un patch basé sur un commit"
-date:   2015-09-01
+date:   2015-09-14
 tags:
 - git 
 description: >
