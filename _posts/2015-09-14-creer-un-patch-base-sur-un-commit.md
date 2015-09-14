@@ -12,7 +12,7 @@ description: >
 
 Le premier réflexe lorsqu'on désire créer un patch est de se tourner vers la commande `git archive`. Son nom est suffisamment explicite pour qu'on s'y intéresse rapidement. Malheureusement, cette commande crée une archive contenant l'intégralité des fichiers d'un dépôt à un instant t. C'est utile, mais ce n'est pas ce que l'on cherche.
 
-Si vous voulez télécharger un archive de votre dépôt tel qu'il était lors d'un commit précis, vous pouvez utiliser cette commande :
+Si vous voulez télécharger une archive de votre dépôt tel qu'il était lors d'un commit précis, vous pouvez utiliser cette commande :
 
     $ git archive -o archive.zip f23e4c
 
@@ -45,7 +45,8 @@ L'astuce, c'est d'utiliser la sortie de la commande `git diff` pour l'injecter d
 
 Cette ligne de commande crée un fichier `patch.zip`, contenant les fichiers modifiés depuis le dernier commit, dans leur état courant. 
 
-Il reste toutefois un petit problème à prendre en compte. Quand un fichier est supprimé, il apparaît dans le listing des fichiers modifiés (la sortie de `git diff`). Or, étant supprimé, la commande `git archive` n'arrive pas a localiser le fichier et génère une erreur. Pour éviter ces erreur, vous pouvez choisir quels types de modifications sont affichées par `git diff` grâce à l'option `diff-filter` :
+Il reste toutefois un petit problème à prendre en compte. Quand un fichier est supprimé, il apparaît dans le listing des fichiers modifiés (la sortie de `git diff`). Or, étant supprimé, la commande `git archive` n'arrive pas à 
+localiser le fichier et génère une erreur. Pour éviter ces erreurs, vous pouvez choisir quels types de modifications sont affichées par `git diff` grâce à l'option `diff-filter` :
 
     $ git archive -o patch.zip HEAD $(git diff --name-only --diff-filter=ACMRTUXB HEAD~1)
 
@@ -78,7 +79,7 @@ Plus courant, un patch pour passer d'un commit à un autre :
 
     $ git archive -o patch.zip f456d8e $(git diff --name-only --diff-filter=ACMRTUXB 11d2ea3)
 
-Bref, il suffit de remplace les deux références par ce qui vous plaît. Afin d'automatiser tout ça, voici un petit bout de code à placer dans votre fichier `~/.bashrc` :
+Bref, il suffit de remplacer les deux références par ce qui vous plaît. Afin d'automatiser tout ça, voici un petit bout de code à placer dans votre fichier `~/.bashrc` :
 
     # Create a git patch (zip format)
     create_git_patch() {
