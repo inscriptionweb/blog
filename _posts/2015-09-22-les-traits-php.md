@@ -5,7 +5,8 @@ date:   2015-09-22
 tags:
 - php 
 description: >
-  Gros plan sur les traits en PHP, un concept peu utilisé pouvant être utile et perturbant à la fois. 
+  Gros plan sur les traits en PHP, un concept encore   
+  peu utilisé pouvant être utile et perturbant à la fois. 
 --- 
 
 ## Back to the future
@@ -87,7 +88,7 @@ Concrètement, cela veut dire que le trait ne peut pas connaître le type de `se
         ...
     }
 
-Gardez bien ça en tête afin d'éviter d'utiliser les traits là où ils vous apporterons plus de soucis que d'avantages.
+Gardez bien ça en tête afin d'éviter d'utiliser les traits là où ils vous apporteront plus de soucis que d'avantages.
 
 ## Les traits multiples et leurs conflits
 
@@ -139,7 +140,8 @@ De la même manière, il est possible de changer la visibilité des membres, tou
 
 ## Conclusion
 
-Voilà pour cette petite présentation des traits, j'espère qu'ils vous serviront un jour. Pour le moment, je les ais surtout utilisés pour ajouter des getters et des setters (`UseSingleCategory`, `UseMultipleCategories`...) et ainsi m'éviter de dupliquer du code. Malgré tout, je suis encore assez fébrile sur leur utilisation, et je peine à clairement identifier les cas où je devrait ou non les utiliser, alors n'hésitez pas à partager vos idées et les utilisations que vous en faites dans les commentaires !
+Voilà pour cette petite présentation des traits, j'espère qu'ils vous serviront un jour. Pour le moment, je les ai surtout utilisés pour ajouter des getters et 
+des setters (`UseSingleCategory`, `UseMultipleCategories`...) et ainsi m'éviter de dupliquer du code. Malgré tout, je suis encore assez fébrile sur leur utilisation, et je peine à clairement identifier les cas où je devrais ou non les utiliser, alors n'hésitez pas à partager vos idées et les utilisations que vous en faites dans les commentaires !
 
 ## Liens
 
