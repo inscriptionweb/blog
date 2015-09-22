@@ -54,7 +54,7 @@ En ce sens, le trait se place entre la classe et l'interface. C'est une sorte de
 
 ## Le problème du typage faible
 
-Le typage faible des des traits est important à comprendre et à prendre en compte, car c'est le point qui peut poser le plus de problèmes. Un exemple qui a fréquemment été mis en avant pour justifier les traits est celui du pattern Singleton. Je vous invite à vous renseigner sur les design patterns (ou patrons de conception) si vous n'êtes pas familiers d'eux. Voici un trait reproduisant ce pattern :
+Le typage faible des traits est important à comprendre et à prendre en compte, car c'est le point qui peut poser le plus de problèmes. Un exemple qui a fréquemment été mis en avant pour justifier les traits est celui du pattern Singleton. Je vous invite à vous renseigner sur les design patterns (ou patrons de conception) si vous n'êtes pas familiers d'eux. Voici un trait reproduisant ce pattern :
 
     trait Singleton
     {
