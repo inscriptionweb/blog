@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Autoriser le flood pour la connexion Drupal"
-date:   2015-10-01
+date:   2015-10-12
 tags:
 - drupal
 - php
