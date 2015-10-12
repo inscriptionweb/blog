@@ -6,7 +6,7 @@ tags:
 - drupal
 - php
 description: >
-  Comment désactive la limite instaurée par Drupal sur le nombre de tentatives de connexion ?
+  Comment désactiver la limite instaurée par Drupal sur le nombre de tentatives de connexion ?
 --- 
 
 > Cet article a été rédigé pour Drupal 7
