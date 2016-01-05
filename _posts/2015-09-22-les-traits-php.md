@@ -24,7 +24,7 @@ Je ne les ai découverts que tout récemment, et ai essayé de les utiliser sur 
         protected $author = null;
 
         public function getAuthor() {
-            return $author;
+            return $this->author;
         }
 
         public function setAuthor($author) {
