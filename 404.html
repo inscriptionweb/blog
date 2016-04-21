@@ -1,0 +1,15 @@
+---
+layout: default
+title: 404 - Page not found
+permalink: /404.html
+---
+
+<h2>Cette page n'existe pas</h2>
+
+<script>
+  // https://github.com/jekyll/jekyll/issues/4440#issuecomment-178815622
+  var url = location.href;
+  if(url.substr(url.length - 1) === '/') {
+    window.location = url.substr(0, url.length - 1);
+  }
+</script>

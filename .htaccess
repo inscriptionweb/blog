@@ -3,4 +3,7 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} !^blog\.smarchal\.com [NC]
 RewriteRule - http://blog.smarchal.com [R=302,L]
 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)/$ $1 [R=301,L]
+
 RewriteRule ^/category/(.*)$ /tag/$1 [R=301,L]
