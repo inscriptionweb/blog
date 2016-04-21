@@ -86,7 +86,7 @@ Voici le CSS complet :
 
 Voici le résultat que vous obtenez suite à ce petit billet :
 
-<center><iframe src="{{ site.url }}/demos/demos/avatar-en-medaillon/index.html" width="500" height="170"></iframe></center>
+<center><iframe src="{{ site.url }}/demos/avatar-en-medaillon/index.html" width="500" height="170"></iframe></center>
 
 
 ## Liens
