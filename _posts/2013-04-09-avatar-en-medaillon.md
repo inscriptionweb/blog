@@ -2,6 +2,7 @@
 layout: post
 title:  "Avatar en médaillon"
 date:   2013-04-08
+redirect_from: /avatar-en-medaillon/
 tags:
 - css 
 description: >
