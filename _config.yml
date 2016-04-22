@@ -15,5 +15,3 @@ markdown: kramdown
 permalink: /:title
 sass:
   style: compressed
-gems:
-  - jekyll-redirect-from
