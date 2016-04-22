@@ -15,9 +15,10 @@ permalink: /404.html
 </article>
 
 <script>
-	// https://github.com/jekyll/jekyll/issues/4440#issuecomment-178815622
-	var url = location.href;
-	if(url.substr(url.length - 1) === '/') {
-		window.location = url.substr(0, url.length - 1);
+	// Remove trailing slash because of Jekyll 3
+	var urll = location.href;
+	var urls = location.href.replace(/#.*/, '');
+	if(urls.substr(urls.length - 1) === '/') {
+		window.location = urll.replace(/\/(?=#|$)/, '');
 	}
 </script>
