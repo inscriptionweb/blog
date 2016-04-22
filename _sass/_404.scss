@@ -1,0 +1,23 @@
+.article-404 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    h2 {
+        font-size: 300%;
+
+        @include media($from: tablet) {
+            font-size: 400%;
+        }
+    }
+    &:after {
+        content: '';
+        display: block;
+        width: map-get($content_width, desktop) / 4;
+        height: 1px;
+        background: $grey_light;
+        margin: $section_padding auto;
+    }
+}

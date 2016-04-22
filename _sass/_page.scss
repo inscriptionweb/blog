@@ -9,6 +9,7 @@ body {
     @extend %font-light;
     font-size: $font_size;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 #canvas {

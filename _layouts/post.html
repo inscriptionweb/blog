@@ -1,22 +1,22 @@
 ---
-layout: default
+layout: full
 ---
 
 {% assign dateMonthNum = page.date | date: "%-m" %}
 {% assign dateMonth = '' %}
 {% case dateMonthNum %}
-  {% when '1' %}{% assign dateMonth = 'Janvier' %}
-  {% when '2' %}{% assign dateMonth = 'Février' %}
-  {% when '3' %}{% assign dateMonth = 'Mars' %}
-  {% when '4' %}{% assign dateMonth = 'Avril' %}
-  {% when '5' %}{% assign dateMonth = 'Mai' %}
-  {% when '6' %}{% assign dateMonth = 'Juin' %}
-  {% when '7' %}{% assign dateMonth = 'Juillet' %}
-  {% when '8' %}{% assign dateMonth = 'Août' %}
-  {% when '9' %}{% assign dateMonth = 'Septembre' %}
-  {% when '10' %}{% assign dateMonth = 'Octobre' %}
-  {% when '11' %}{% assign dateMonth = 'Novembre' %}
-  {% when '12' %}{% assign dateMonth = 'Décembre' %}
+	{% when '1' %}{% assign dateMonth = 'Janvier' %}
+	{% when '2' %}{% assign dateMonth = 'Février' %}
+	{% when '3' %}{% assign dateMonth = 'Mars' %}
+	{% when '4' %}{% assign dateMonth = 'Avril' %}
+	{% when '5' %}{% assign dateMonth = 'Mai' %}
+	{% when '6' %}{% assign dateMonth = 'Juin' %}
+	{% when '7' %}{% assign dateMonth = 'Juillet' %}
+	{% when '8' %}{% assign dateMonth = 'Août' %}
+	{% when '9' %}{% assign dateMonth = 'Septembre' %}
+	{% when '10' %}{% assign dateMonth = 'Octobre' %}
+	{% when '11' %}{% assign dateMonth = 'Novembre' %}
+	{% when '12' %}{% assign dateMonth = 'Décembre' %}
 {% endcase %}
 
 <header>
@@ -29,22 +29,22 @@ layout: default
 		<p class="date">{{ page.date | date: "%d " }}{{ dateMonth }}{{ page.date | date: " %Y" }}</p>
 		{% if page.update %}
 
-    {% assign updateMonthNum = page.update | date: "%-m" %}
-    {% assign updateMonth = '' %}
-    {% case updateMonthNum %}
-      {% when '1' %}{% assign updateMonth = 'Janvier' %}
-      {% when '2' %}{% assign updateMonth = 'Février' %}
-      {% when '3' %}{% assign updateMonth = 'Mars' %}
-      {% when '4' %}{% assign updateMonth = 'Avril' %}
-      {% when '5' %}{% assign updateMonth = 'Mai' %}
-      {% when '6' %}{% assign updateMonth = 'Juin' %}
-      {% when '7' %}{% assign updateMonth = 'Juillet' %}
-      {% when '8' %}{% assign updateMonth = 'Août' %}
-      {% when '9' %}{% assign updateMonth = 'Septembre' %}
-      {% when '10' %}{% assign updateMonth = 'Octobre' %}
-      {% when '11' %}{% assign updateMonth = 'Novembre' %}
-      {% when '12' %}{% assign updateMonth = 'Décembre' %}
-    {% endcase %}
+		{% assign updateMonthNum = page.update | date: "%-m" %}
+		{% assign updateMonth = '' %}
+		{% case updateMonthNum %}
+			{% when '1' %}{% assign updateMonth = 'Janvier' %}
+			{% when '2' %}{% assign updateMonth = 'Février' %}
+			{% when '3' %}{% assign updateMonth = 'Mars' %}
+			{% when '4' %}{% assign updateMonth = 'Avril' %}
+			{% when '5' %}{% assign updateMonth = 'Mai' %}
+			{% when '6' %}{% assign updateMonth = 'Juin' %}
+			{% when '7' %}{% assign updateMonth = 'Juillet' %}
+			{% when '8' %}{% assign updateMonth = 'Août' %}
+			{% when '9' %}{% assign updateMonth = 'Septembre' %}
+			{% when '10' %}{% assign updateMonth = 'Octobre' %}
+			{% when '11' %}{% assign updateMonth = 'Novembre' %}
+			{% when '12' %}{% assign updateMonth = 'Décembre' %}
+		{% endcase %}
 
 		<p class="update"><label>Mise à jour :</label> {{ page.update | date: "%d " }}{{ updateMonth }}{{ page.update | date: " %Y" }}</p>
 		{% endif %}

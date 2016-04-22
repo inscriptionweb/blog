@@ -1,15 +1,23 @@
 ---
 layout: default
-title: 404 - Page not found
+title: 404 - Page introuvable
 permalink: /404.html
 ---
 
-<h2>Cette page n'existe pas</h2>
+<article class="article-404">
+	<h2>404</h2>
+	<h3>Oops, la page est introuvable</h3>
+	<p>
+		L'adresse saisie est probablement incorrecte,<br>
+		ou la page a été déplacée.
+	</p>
+	<p><a href="/">Retourner à l'accueil</a></p>
+</article>
 
 <script>
-  // https://github.com/jekyll/jekyll/issues/4440#issuecomment-178815622
-  var url = location.href;
-  if(url.substr(url.length - 1) === '/') {
-    window.location = url.substr(0, url.length - 1);
-  }
+	// https://github.com/jekyll/jekyll/issues/4440#issuecomment-178815622
+	var url = location.href;
+	if(url.substr(url.length - 1) === '/') {
+		window.location = url.substr(0, url.length - 1);
+	}
 </script>

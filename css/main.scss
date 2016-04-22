@@ -2,7 +2,7 @@
 # Main Sass file (dashes required)
 ---
 @charset "utf-8";
- 
+
 @import "reset";
 @import "sass-queries";
 
@@ -14,3 +14,4 @@
 @import "page";
 @import "post";
 @import "listing";
+@import "404";
