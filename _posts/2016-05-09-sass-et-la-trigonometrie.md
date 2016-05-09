@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Sass et la trigonométrie"
-date:   2015-01-01
+date:   2016-05-09
 tags:
 - mathematiques
 - sass 
@@ -60,7 +60,7 @@ Ici, plus d'inconnues : nous connaissons `x` et `n` à tout instant. Il ne reste
 {:.center}
 ![Définition à l'aide des séries entières : sinus]({{ site.url }}/images/sass-et-la-trigonometrie/sinus.png)
 
-Nous aurons toutefois besoin d'encore trois choses avant d'attaquer ces formules :
+Nous aurons toutefois besoin d'encore quatre choses avant d'attaquer ces formules :
 
 - la fonction puissance
 - la fonction factorielle
@@ -70,7 +70,7 @@ Nous aurons toutefois besoin d'encore trois choses avant d'attaquer ces formules
 ## Fonction puissance
 
 La fonction puissance est assez simple à écrire. Pour `xⁿ` il s'agit juste de multiplier `1` par `x`, et ce `n` fois.  
-Petite nuance toutefois, quand vous utilisez une puissance négative, il faut diviser au lieu de multiplier. Dans le cas ou la puissance est nulle, on retournera toujours la valeur `1` :
+Petite nuance toutefois, quand vous utilisez une puissance négative, il faut diviser au lieu de multiplier. Dans le cas où la puissance est nulle, on retournera toujours la valeur `1` :
 
     @function pow($x, $n) {
         $pow: 1;
@@ -140,7 +140,7 @@ Comme la fonction cosinus n'accepte que les radians, il faudra penser à utilise
     $a: cos( deg2rad(150deg) ); // -0.8660254
     $a: cos( 5 * pi() / 6 );    // -0.8660254
 
-Actuellement, la boucle `@for` est utilisée 10 fois. Augmenter cette valeur `i` augmenterait la précision, tout en réduisant la vitesse de compilation, il est donc important de fixer une valeur `i` assez basse pour ne pas passer 3 heures à compiler, mais suffisamment haute pour ne pas perdre en précision. Sur tous les tests que j'ai pu effectuer, j'obtiens les même résultat pour toute valeur `i` supérieure ou égale à 8 ; on peut donc fixer `i` à 10, histoire d'avoir une petite marge de sécurité.
+Actuellement, la boucle `@for` est utilisée 10 fois. Augmenter cette valeur `i` augmenterait la précision, tout en réduisant la vitesse de compilation, il est donc important de fixer une valeur `i` assez basse pour ne pas passer 3 heures à compiler, mais suffisamment haute pour ne pas perdre en précision. Sur tous les tests que j'ai pu effectuer, j'obtiens les mêmes résultats pour toute valeur `i` supérieure ou égale à 8 ; on peut donc fixer `i` à 10, histoire d'avoir une petite marge de sécurité.
 
 ## Sinus
 
